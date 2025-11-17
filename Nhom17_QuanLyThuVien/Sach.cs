@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Nhom17_QuanLyThuVien
 {
     [Serializable]
-    internal class Sach
+    public class Sach
     {
         private string maSach;
         private string tenSach;

@@ -1,0 +1,105 @@
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.QuanLyThuVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.QuanLyThuVien.resources
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\lenovo\OneDrive\Documents\lsd\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.QuanLyThuVien.resources
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\lenovo\OneDrive\Documents\Nhom17_QuanLyThuVien\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.QuanLyThuVien.resources
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\IN IN\Downloads\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien (1)\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+C:\Users\lenovo\OneDrive\Desktop\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
