@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Nhom17_QuanLyThuVien
 {
-    internal class XuLyThanhVien
+    public class XuLyThanhVien
     {
         private List<ThanhVien> dsThanhVien;
+        private static XuLyThanhVien instance;
+        public static XuLyThanhVien Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new XuLyThanhVien();
+                return instance;
+            }
+        }
         public XuLyThanhVien()
         {
             this.dsThanhVien = new List<ThanhVien>();
@@ -33,6 +45,7 @@ namespace Nhom17_QuanLyThuVien
             FileDocGhi.GhiDuLieu(filename, dsThanhVien);
 
         }
+        
         public List<ThanhVien> LayDanhSach()
         {
             return dsThanhVien;
@@ -46,6 +59,11 @@ namespace Nhom17_QuanLyThuVien
             }
             return false;
 
+        }
+        // kiem tra ton tai thanh vien trong phieu
+        public ThanhVien TimTV(string ma)
+        {
+            return dsThanhVien.FirstOrDefault(tv => tv.MaThanhVien.Equals(ma, StringComparison.OrdinalIgnoreCase));
         }
         public bool ThemTV(ThanhVien tv)
         {
@@ -95,6 +113,23 @@ namespace Nhom17_QuanLyThuVien
                     return i;
             }
             return -1;
+        }
+        public bool KiemTraEmail(string email)
+        {
+            string p = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Email không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!Regex.IsMatch(email, p))
+            {
+                MessageBox.Show("Email không đúng định dạng (ví dụ: a@b.com)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
         }
 
         // --- Sắp xếp theo mã (ISBN) - Selection Sort ---

@@ -52,6 +52,8 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripMuonTra = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtLoai = new System.Windows.Forms.TextBox();
+            this.txtTenTacGia = new System.Windows.Forms.TextBox();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.txtMaSach = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -61,8 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListSach = new System.Windows.Forms.DataGridView();
-            this.txtTenTacGia = new System.Windows.Forms.TextBox();
-            this.txtLoai = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -185,7 +185,7 @@
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(29, 24);
-            this.btnDelete.Text = "toolStripButton3";
+            this.btnDelete.Text = "Delete";
             // 
             // toolStripXoa
             // 
@@ -201,7 +201,7 @@
             this.btnSuaaa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSuaaa.Name = "btnSuaaa";
             this.btnSuaaa.Size = new System.Drawing.Size(29, 24);
-            this.btnSuaaa.Text = "toolStripButton2";
+            this.btnSuaaa.Text = "Edit";
             // 
             // btnSua
             // 
@@ -217,7 +217,7 @@
             this.btnLuuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuuu.Name = "btnLuuu";
             this.btnLuuu.Size = new System.Drawing.Size(29, 24);
-            this.btnLuuu.Text = "toolStripButton4";
+            this.btnLuuu.Text = "Save";
             // 
             // btnLuu
             // 
@@ -232,7 +232,7 @@
             this.btnHuyy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnHuyy.Name = "btnHuyy";
             this.btnHuyy.Size = new System.Drawing.Size(29, 24);
-            this.btnHuyy.Text = "toolStripButton5";
+            this.btnHuyy.Text = "Cancel";
             // 
             // btnHuy
             // 
@@ -248,7 +248,8 @@
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton6.Text = "toolStripButton6";
+            this.toolStripButton6.Text = "MuonTra";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripMuonTra
             // 
@@ -274,6 +275,20 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
+            // 
+            // txtLoai
+            // 
+            this.txtLoai.Location = new System.Drawing.Point(419, 70);
+            this.txtLoai.Name = "txtLoai";
+            this.txtLoai.Size = new System.Drawing.Size(198, 22);
+            this.txtLoai.TabIndex = 6;
+            // 
+            // txtTenTacGia
+            // 
+            this.txtTenTacGia.Location = new System.Drawing.Point(419, 33);
+            this.txtTenTacGia.Name = "txtTenTacGia";
+            this.txtTenTacGia.Size = new System.Drawing.Size(198, 22);
+            this.txtTenTacGia.TabIndex = 6;
             // 
             // txtTenSach
             // 
@@ -359,20 +374,6 @@
             this.dgvListSach.Size = new System.Drawing.Size(987, 174);
             this.dgvListSach.TabIndex = 4;
             this.dgvListSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListSach_CellClick);
-            // 
-            // txtTenTacGia
-            // 
-            this.txtTenTacGia.Location = new System.Drawing.Point(419, 33);
-            this.txtTenTacGia.Name = "txtTenTacGia";
-            this.txtTenTacGia.Size = new System.Drawing.Size(198, 22);
-            this.txtTenTacGia.TabIndex = 6;
-            // 
-            // txtLoai
-            // 
-            this.txtLoai.Location = new System.Drawing.Point(419, 70);
-            this.txtLoai.Name = "txtLoai";
-            this.txtLoai.Size = new System.Drawing.Size(198, 22);
-            this.txtLoai.TabIndex = 6;
             // 
             // MainThuVien
             // 

@@ -71,7 +71,15 @@ namespace Nhom17_QuanLyThuVien
                 Phai = "Nam";
             else
                 Phai = "Nữ";
-
+            if(string.IsNullOrEmpty(maTV) || string.IsNullOrEmpty(tenTV) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if(!xlThanhVien.KiemTraEmail(email))
+            {
+                return;
+            }
             ThanhVien tv = new ThanhVien(maTV, tenTV, sdt, email, ngaysinh, ngaydk, yeucau, Phai);
             bool them = xlThanhVien.ThemTV(tv);
             if (them == true)
@@ -191,6 +199,14 @@ namespace Nhom17_QuanLyThuVien
              HienThiDSThanhVien(xlThanhVien.LayDanhSach());
              ClearInputFields();
             
+        }
+
+        private void SDTTV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

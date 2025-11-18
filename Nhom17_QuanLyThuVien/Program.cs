@@ -16,7 +16,15 @@ namespace Nhom17_QuanLyThuVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Log_in());
+            try
+            {
+                Application.Run(new Log_in());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+            
         }
     }
 }

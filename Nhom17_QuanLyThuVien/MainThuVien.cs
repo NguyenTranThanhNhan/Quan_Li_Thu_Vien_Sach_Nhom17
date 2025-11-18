@@ -15,7 +15,7 @@ namespace Nhom17_QuanLyThuVien
     public partial class MainThuVien : Form
     {
         public bool isExit = true;
-        private XuLySach xlSach = new XuLySach();
+        private XuLySach xlSach = XuLySach.Instance;
         private int vitri = -1;
         public event EventHandler LogOut;
         public MainThuVien()
@@ -29,9 +29,12 @@ namespace Nhom17_QuanLyThuVien
 
         private void toolStripMuonTra_Click(object sender, EventArgs e)
         {
-            new Muon_Tra().Show();
+            new PhieuMuon().Show();
         }
-
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            new PhieuMuon().Show();
+        }
         private void MainThuVien_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isExit)

@@ -5,11 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Policy;
 namespace Nhom17_QuanLyThuVien
 {
     public class XuLySach
     {
         private List<Sach> dsSach;
+        private static XuLySach instance;
+        public static XuLySach Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new XuLySach();
+                return instance;
+            }
+        }
         public XuLySach()
         {
             this.dsSach = new List<Sach>();
@@ -45,6 +56,28 @@ namespace Nhom17_QuanLyThuVien
             }
             return false;
         }
+        // kiem tra ton tai ma sach trong phieu
+        public Sach TimSach(string ma)
+        {
+            return dsSach.FirstOrDefault(s => s.MaSach == ma);
+        }
+
+        public bool GiamSoLuong(string ma, int sl)
+        {
+            var s = TimSach(ma);
+            if (s == null || s.SoLuong < sl)
+                return false;
+
+            s.SoLuong -= sl;
+            return true;
+        }
+
+        public void TangSoLuong(string ma, int sl)
+        {
+            var s = TimSach(ma);
+            if (s != null)
+                s.SoLuong += sl;
+        }
         public bool ThemSach(Sach s) {
             if (kttrungma(s.MaSach)) { 
             Console.WriteLine("Mã sách đã tồn tại, không thể thêm.");
@@ -67,7 +100,6 @@ namespace Nhom17_QuanLyThuVien
             }
             else
             {
-                Console.WriteLine("Không tìm thấy sách với mã đã cho.");
                 return false;
             }
         }

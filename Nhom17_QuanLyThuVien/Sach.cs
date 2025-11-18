@@ -43,20 +43,6 @@ namespace Nhom17_QuanLyThuVien
         public string TheLoai { get => theLoai; set => theLoai = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
         public int NamXuatBan { get => namXuatBan; set => namXuatBan = value; }
-        public void GiamSoLuong(int soLuongMuon)
-        {
-            if (soLuongMuon <= soLuong)
-            {
-                soLuong -= soLuongMuon;
-            }
-            else
-            {
-                throw new InvalidOperationException("Số lượng mượn vượt quá số lượng hiện có.");
-            }
-        }
-        public void TangSoLuong(int soLuongTra)
-        {
-            soLuong += soLuongTra;
-        }
+       
     }
 }

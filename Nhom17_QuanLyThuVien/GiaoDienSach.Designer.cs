@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnthem = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
@@ -166,6 +167,7 @@
             // 
             // MaSach
             // 
+            this.MaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaSach.Location = new System.Drawing.Point(160, 90);
             this.MaSach.Name = "MaSach";
             this.MaSach.Size = new System.Drawing.Size(422, 22);
@@ -173,6 +175,7 @@
             // 
             // NhaXB
             // 
+            this.NhaXB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NhaXB.Location = new System.Drawing.Point(160, 291);
             this.NhaXB.Name = "NhaXB";
             this.NhaXB.Size = new System.Drawing.Size(422, 22);
@@ -180,6 +183,7 @@
             // 
             // TacGia
             // 
+            this.TacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TacGia.Location = new System.Drawing.Point(160, 187);
             this.TacGia.Name = "TacGia";
             this.TacGia.Size = new System.Drawing.Size(422, 22);
@@ -187,6 +191,7 @@
             // 
             // TenSach
             // 
+            this.TenSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenSach.Location = new System.Drawing.Point(160, 136);
             this.TenSach.Name = "TenSach";
             this.TenSach.Size = new System.Drawing.Size(422, 22);
@@ -195,6 +200,7 @@
             // NgaySX
             // 
             this.NgaySX.CustomFormat = "dd/MM/yyyy";
+            this.NgaySX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NgaySX.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.NgaySX.Location = new System.Drawing.Point(160, 241);
             this.NgaySX.Name = "NgaySX";
@@ -226,6 +232,14 @@
             // 
             this.DaTaSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.DaTaSach.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DaTaSach.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DaTaSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DaTaSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ms,
@@ -265,7 +279,7 @@
             this.tg.HeaderText = "Tác Giả";
             this.tg.MinimumWidth = 8;
             this.tg.Name = "tg";
-            this.tg.Width = 63;
+            this.tg.Width = 84;
             // 
             // nsx
             // 
@@ -273,7 +287,7 @@
             this.nsx.HeaderText = "Năm Xuất Bản";
             this.nsx.MinimumWidth = 8;
             this.nsx.Name = "nsx";
-            this.nsx.Width = 98;
+            this.nsx.Width = 121;
             // 
             // nxb
             // 
@@ -281,7 +295,7 @@
             this.nxb.HeaderText = "Nhà Xuất Bản";
             this.nxb.MinimumWidth = 8;
             this.nxb.Name = "nxb";
-            this.nxb.Width = 119;
+            this.nxb.Width = 117;
             // 
             // tl
             // 
@@ -289,7 +303,7 @@
             this.tl.HeaderText = "Thể Loại";
             this.tl.MinimumWidth = 8;
             this.tl.Name = "tl";
-            this.tl.Width = 90;
+            this.tl.Width = 89;
             // 
             // Sl
             // 
@@ -311,6 +325,7 @@
             // 
             // SoLuong
             // 
+            this.SoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SoLuong.Location = new System.Drawing.Point(160, 387);
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.Size = new System.Drawing.Size(422, 22);
@@ -329,6 +344,7 @@
             // 
             // cbbTheLoai
             // 
+            this.cbbTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTheLoai.FormattingEnabled = true;
             this.cbbTheLoai.Location = new System.Drawing.Point(163, 343);
             this.cbbTheLoai.Name = "cbbTheLoai";

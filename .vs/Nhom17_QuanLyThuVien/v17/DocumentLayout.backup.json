@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\",
+  "WorkspaceRootPath": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|e:\\doantinhoc\\nhom17_quanlythuvien_lan2\\nhom17_quanlythuvien\\xulymuontra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\xulymuontra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|e:\\doantinhoc\\nhom17_quanlythuvien_lan2\\nhom17_quanlythuvien\\muon_tra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\muon_tra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|e:\\doantinhoc\\nhom17_quanlythuvien_lan3\\nhom17_quanlythuvien\\cxulyphieumuontra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\cxulyphieumuontra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\nhom17_quanlythuvien\\giaodiensach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\giaodiensach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|e:\\doantinhoc\\nhom17_quanlythuvien_lan2\\nhom17_quanlythuvien\\muon_tra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\muon_tra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "XuLyMuonTra.cs",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\XuLyMuonTra.cs",
-              "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\XuLyMuonTra.cs",
-              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\XuLyMuonTra.cs",
-              "RelativeToolTip": "Nhom17_QuanLyThuVien\\XuLyMuonTra.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:20:19.341Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{2d7728c2-de0a-45b5-99aa-89b609dfde73}"
@@ -48,39 +31,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Muon_Tra.cs",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\Muon_Tra.cs",
-              "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\Muon_Tra.cs",
-              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\Muon_Tra.cs",
-              "RelativeToolTip": "Nhom17_QuanLyThuVien\\Muon_Tra.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAIA6wDEAAAAZAAAAAAAAAA==",
+              "Title": "CXuLyPhieuMuonTra.cs",
+              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
+              "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
+              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
+              "RelativeToolTip": "Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
+              "ViewState": "AgIAANUAAAAAAAAAAAAuwGgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:00:33.757Z",
+              "WhenOpened": "2025-11-18T11:08:29.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PhieuMuon.cs",
+              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "RelativeToolTip": "Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T09:50:22.437Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GiaoDienSach.cs",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\GiaoDienSach.cs",
-              "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\GiaoDienSach.cs",
-              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\GiaoDienSach.cs",
-              "RelativeToolTip": "Nhom17_QuanLyThuVien\\GiaoDienSach.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAdAAAAAAAAAA==",
+              "Title": "PhieuMuon.cs [Design]",
+              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs [Design]",
+              "RelativeToolTip": "Nhom17_QuanLyThuVien\\PhieuMuon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T07:05:26.622Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Muon_Tra.cs [Design]",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\Muon_Tra.cs",
-              "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\Muon_Tra.cs",
-              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan2\\Nhom17_QuanLyThuVien\\Muon_Tra.cs [Design]",
-              "RelativeToolTip": "Nhom17_QuanLyThuVien\\Muon_Tra.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T13:50:11.904Z",
+              "WhenOpened": "2025-11-18T09:50:09.944Z",
               "EditorCaption": " [Design]"
             }
           ]

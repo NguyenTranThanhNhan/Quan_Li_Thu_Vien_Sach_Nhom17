@@ -97,9 +97,38 @@ E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_Qu
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
-E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Muon_Tra.resources
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
 E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.PhieuMuon.resources
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe.config
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.PhieuMuon.resources
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+C:\30_Lâm Phi Nhung_10A6\Nhom17_QuanLyThuVien_lan2\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe.config
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\bin\Debug\Nhom17_QuanLyThuVien.pdb
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.AssemblyReference.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienQLThanhVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.GiaoDienSach.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Log_in.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.MainThuVien.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.PhieuMuon.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.Properties.Resources.resources
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.GenerateResource.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.csproj.CoreCompileInputs.cache
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.exe
+E:\DoAnTinHoc\Nhom17_QuanLyThuVien_lan3\Nhom17_QuanLyThuVien\obj\Debug\Nhom17_QuanLyThuVien.pdb

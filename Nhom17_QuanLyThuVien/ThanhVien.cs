@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Nhom17_QuanLyThuVien
 {
     [Serializable]
-    internal class ThanhVien
+    public class ThanhVien
     {
         private string maTV;
         private string tenTV;

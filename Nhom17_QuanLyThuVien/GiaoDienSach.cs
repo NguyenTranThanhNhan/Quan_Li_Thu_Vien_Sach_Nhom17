@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace Nhom17_QuanLyThuVien
     public partial class GiaoDienSach : Form
     {
         private XuLySach xlSach = new XuLySach();
+        private CXuLyPhieuMuonTra xlMuon = CXuLyPhieuMuonTra.Instance;
         private int vitri = -1;
         public GiaoDienSach()
         {
@@ -39,7 +41,7 @@ namespace Nhom17_QuanLyThuVien
             TenSach.Clear();
             TacGia.Clear();
             NhaXB.Clear();
-            cbbTheLoai.Items.Clear();
+            cbbTheLoai.Text = "";
             SoLuong.Clear();
             //NgaySX.Value = DateTime.Now;
             NgaySX.ResetText();
@@ -59,6 +61,25 @@ namespace Nhom17_QuanLyThuVien
         }
         private void btnthem_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(SoLuong.Text, out int soLuong) || soLuong <= 0)
+            {
+                MessageBox.Show("Số lượng phải là số nguyên và lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SoLuong.Focus();
+                return;
+            }
+            if (NgaySX.Value.Year > DateTime.Now.Year)
+            {
+                MessageBox.Show("Năm xuất bản không được lớn hơn năm hiện tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NgaySX.Focus();
+                return;
+            }
+            if(string.IsNullOrWhiteSpace(MaSach.Text) || string.IsNullOrWhiteSpace(TenSach.Text) ||
+               string.IsNullOrWhiteSpace(TacGia.Text) || string.IsNullOrWhiteSpace(NhaXB.Text) ||
+               string.IsNullOrWhiteSpace(cbbTheLoai.Text) || string.IsNullOrWhiteSpace(SoLuong.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin sách!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Sach s = new Sach(MaSach.Text, TenSach.Text, TacGia.Text, NhaXB.Text, cbbTheLoai.Text, int.Parse(SoLuong.Text), NgaySX.Value.Year);
             bool kqthem = xlSach.ThemSach(s);
             if (kqthem == true)
@@ -75,6 +96,16 @@ namespace Nhom17_QuanLyThuVien
 
         private void btnxoa_Click(object sender, EventArgs e)
         {
+            string maSach = MaSach.Text;
+            var xlPMT = CXuLyPhieuMuonTra.Instance;
+            foreach (var pmt in xlPMT.LayDSM())
+            {
+                if (pmt.MaSach == maSach && pmt.TrangThai == false)
+                {
+                    MessageBox.Show("Không thể xóa sách vì có phiếu mượn chưa trả.","thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
             DialogResult kq = MessageBox.Show("Bạn muốn xóa sách?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
@@ -93,6 +124,12 @@ namespace Nhom17_QuanLyThuVien
         }
         private void btnsua_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(SoLuong.Text, out int sl) || sl <= 0)
+            {
+                MessageBox.Show("Số lượng phải là số nguyên và lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SoLuong.Focus();
+                return;
+            }
             string maSach = MaSach.Text;
             string tenSach = TenSach.Text;
             string tacGia = TacGia.Text;
