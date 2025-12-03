@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\",
+  "WorkspaceRootPath": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|e:\\doantinhoc\\nhom17_quanlythuvien_lan3\\nhom17_quanlythuvien\\mainthuvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|c:\\users\\lenovo\\onedrive\\desktop\\quan_li_thu_vien_sach_nhom17\\nhom17_quanlythuvien\\mainthuvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\mainthuvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\nhom17_quanlythuvien\\cxulyphieumuontra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\nhom17_quanlythuvien\\cxulyphieumuontra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\cxulyphieumuontra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|e:\\doantinhoc\\nhom17_quanlythuvien_lan3\\nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EA9BAFCE-C314-4415-8CAB-4D5E82D3A9FF}|Nhom17_QuanLyThuVien\\Nhom17_QuanLyThuVien.csproj|solutionrelative:nhom17_quanlythuvien\\phieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,19 +26,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{2d7728c2-de0a-45b5-99aa-89b609dfde73}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainThuVien.cs [Design]",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\MainThuVien.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\Nhom17_QuanLyThuVien\\MainThuVien.cs",
               "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\MainThuVien.cs",
-              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\MainThuVien.cs [Design]",
+              "ToolTip": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\Nhom17_QuanLyThuVien\\MainThuVien.cs [Design]",
               "RelativeToolTip": "Nhom17_QuanLyThuVien\\MainThuVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T12:16:19.784Z",
@@ -48,39 +52,35 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CXuLyPhieuMuonTra.cs",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
               "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
-              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
+              "ToolTip": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
               "RelativeToolTip": "Nhom17_QuanLyThuVien\\CXuLyPhieuMuonTra.cs",
               "ViewState": "AgIAANUAAAAAAAAAAAAuwGgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T11:08:29.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T11:08:29.89Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "PhieuMuon.cs",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
               "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\PhieuMuon.cs",
-              "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "ToolTip": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
               "RelativeToolTip": "Nhom17_QuanLyThuVien\\PhieuMuon.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwBkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T09:50:22.437Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T09:50:22.437Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "PhieuMuon.cs [Design]",
-              "DocumentMoniker": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
+              "DocumentMoniker": "C:\\Users\\lenovo\\OneDrive\\Desktop\\Quan_Li_Thu_Vien_Sach_Nhom17\\Nhom17_QuanLyThuVien\\PhieuMuon.cs",
               "RelativeDocumentMoniker": "Nhom17_QuanLyThuVien\\PhieuMuon.cs",
               "ToolTip": "E:\\DoAnTinHoc\\Nhom17_QuanLyThuVien_lan3\\Nhom17_QuanLyThuVien\\PhieuMuon.cs [Design]",
-              "RelativeToolTip": "Nhom17_QuanLyThuVien\\PhieuMuon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T09:50:09.944Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-18T09:50:09.944Z"
             }
           ]
         }

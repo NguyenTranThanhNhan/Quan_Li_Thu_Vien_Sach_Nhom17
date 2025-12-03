@@ -9,49 +9,82 @@ namespace Nhom17_QuanLyThuVien
     [Serializable]
     public class MuonTra
     {
-        private string maMuonTra;
+        public enum TrangThaiPhieu { ChuaTra = 0, DaTra = 1 }
+        private string maPhieu;
         private string maTV;
-        private string maSach;
-        private int SoLuong;
+        private string tenTV;
         private string sdt;
         private DateTime ngayMuon;
-        private DateTime ngayTra;
-        private bool trangThai; // true: đã trả, false: chưa trả
-        
-        //properties
-        public string MaMuonTra { get => maMuonTra; set => maMuonTra = value; }
-        public string MaThanhVien { get => maTV; set => maTV = value; }
-        public string MaSach { get => maSach; set => maSach = value; }
-        public int Soluong { get => SoLuong; set => SoLuong=value; }
-        public DateTime NgayMuon { get => ngayMuon; set => ngayMuon = value; }
-        public DateTime NgayTra { get => ngayTra; set => ngayTra = value; }
-        public bool TrangThai { get => trangThai; set => trangThai = value; }
-        public string Sdt { get => sdt; set => sdt=value; }
+        private DateTime ngayTraDuKien;
+        private int tongSoLuongMuon;
+        private int soLanGiaHan;
+        private TrangThaiPhieu trangThai;
+        private List<ChiTietSachMuon> danhSachChiTiet;
 
-
-        // constructor
         public MuonTra()
         {
-            this.maMuonTra = "";
-            this.maTV = "";
-            this.maSach = "";
-            this.Soluong = 0;
-            this.sdt ="";
-            this.ngayMuon = DateTime.Now;
-            this.ngayTra = DateTime.Now;
-            this.trangThai = false;
+            this.danhSachChiTiet = new List<ChiTietSachMuon>();
+            this.trangThai = TrangThaiPhieu.ChuaTra;
         }
-        public MuonTra(string maMuonTra, string maTV, string maSach, int soluong, string sdt, DateTime ngayMuon, DateTime ngayTra, bool trangThai)
+        public string MaPhieu
         {
-            this.maMuonTra = maMuonTra;
-            this.maTV = maTV;
-            this.maSach = maSach;
-            this.Soluong = soluong;
-            this.sdt = sdt;
-            this.ngayMuon = ngayMuon;
-            this.ngayTra = ngayTra;
-            this.trangThai = trangThai;
+            get { return this.maPhieu; }
+            set { this.maPhieu = value; }
         }
 
-    }
+        public string MaTV
+        {
+            get { return this.maTV; }
+            set { this.maTV = value; }
+        }
+
+        public string TenTV
+        {
+            get { return this.tenTV; }
+            set { this.tenTV = value; }
+        }
+
+        public string SDT
+        {
+            get { return this.sdt; }
+            set { this.sdt = value; }
+        }
+
+        public DateTime NgayMuon
+        {
+            get { return this.ngayMuon; }
+            set { this.ngayMuon = value; }
+        }
+
+        public DateTime NgayTraDuKien
+        {
+            get { return this.ngayTraDuKien; }
+            set { this.ngayTraDuKien = value; }
+        }
+
+        public int TongSoLuongMuon
+        {
+            get { return this.tongSoLuongMuon; }
+            set { this.tongSoLuongMuon = value; }
+        }
+
+        public int SoLanGiaHan
+        {
+            get { return this.soLanGiaHan; }
+            set { this.soLanGiaHan = value; }
+        }
+
+        public TrangThaiPhieu TrangThai
+        {
+            get { return this.trangThai; }
+            set { this.trangThai = value; }
+        }
+
+        // Danh sách các chi tiết mượn
+        public List<ChiTietSachMuon> DanhSachChiTiet
+        {
+            get { return this.danhSachChiTiet; }
+            set { this.danhSachChiTiet = value; }
+        }
+}
 }

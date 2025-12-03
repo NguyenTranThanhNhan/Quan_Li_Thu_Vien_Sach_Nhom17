@@ -16,6 +16,7 @@ namespace Nhom17_QuanLyThuVien
         private string theLoai;
         private int soLuong;
         private int namXuatBan;
+        private int soLuongCon;
         public Sach()
         {
             this.maSach = "";
@@ -25,8 +26,9 @@ namespace Nhom17_QuanLyThuVien
             this.theLoai = "";
             this.soLuong = 0;
             this.namXuatBan = 0;
+            this.soLuongCon = 0;
         }
-        public Sach(string maSach, string tenSach, string tacGia, string nhaXuatBan, string theLoai, int soLuong, int namXuatBan)
+        public Sach(string maSach, string tenSach, string tacGia, string nhaXuatBan, string theLoai, int soLuong, int namXuatBan,int soLuongCon)
         {
             this.maSach = maSach;
             this.tenSach = tenSach;
@@ -35,6 +37,7 @@ namespace Nhom17_QuanLyThuVien
             this.theLoai = theLoai;
             this.soLuong = soLuong;
             this.namXuatBan = namXuatBan;
+            this.soLuongCon = soLuongCon;
         }
         public string MaSach { get => maSach; set => maSach = value; }
         public string TenSach { get => tenSach; set => tenSach = value; }
@@ -43,6 +46,16 @@ namespace Nhom17_QuanLyThuVien
         public string TheLoai { get => theLoai; set => theLoai = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
         public int NamXuatBan { get => namXuatBan; set => namXuatBan = value; }
-       
+        public int SoLuongCon { get => soLuongCon; set => soLuongCon = value; }
+
+        //public string TinhTrang
+        //{
+        //    get
+        //    {
+        //        if (SoLuongCon <= 0) return "Hết";
+        //        return "Còn";
+        //    }
+        //}
+
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Nhom17_QuanLyThuVien
 {
+
     public class XuLyThanhVien
     {
         private List<ThanhVien> dsThanhVien;
@@ -35,7 +36,7 @@ namespace Nhom17_QuanLyThuVien
             set { this.dsThanhVien = value; }
         }
 
-        private string filename = "ThanhVien.dat";
+        private string filename = "dsthanhvien.dat";
         public void DocFile()
         {
             FileDocGhi.DocDuLieu(filename, out dsThanhVien);
@@ -45,7 +46,7 @@ namespace Nhom17_QuanLyThuVien
             FileDocGhi.GhiDuLieu(filename, dsThanhVien);
 
         }
-        
+
         public List<ThanhVien> LayDanhSach()
         {
             return dsThanhVien;
@@ -81,7 +82,7 @@ namespace Nhom17_QuanLyThuVien
         }
         public bool XoaTV(string ma)
         {
-            ThanhVien tv=LinearSearchTheoMa(ma);
+            ThanhVien tv = LinearSearchTheoMa(ma);
             if (tv != null)
             {
                 dsThanhVien.Remove(tv);
@@ -157,7 +158,7 @@ namespace Nhom17_QuanLyThuVien
         // --- Sắp xếp theo tên - Bubble Sort ---
         public void BubbleSortTheoTen()
         {
-            for (int i = 0; i < dsThanhVien .Count - 1; i++)
+            for (int i = 0; i < dsThanhVien.Count - 1; i++)
             {
                 for (int j = 0; j < dsThanhVien.Count - i - 1; j++)
                 {
@@ -165,7 +166,7 @@ namespace Nhom17_QuanLyThuVien
                     {
                         ThanhVien temp = dsThanhVien[j];
                         dsThanhVien[j] = dsThanhVien[j + 1];
-                        dsThanhVien [j + 1] = temp;
+                        dsThanhVien[j + 1] = temp;
                     }
                 }
             }
@@ -182,7 +183,7 @@ namespace Nhom17_QuanLyThuVien
             return null;
         }
 
-        // --- Tìm kiếm nhị phân theo tên sách ---
+        // --- Tìm kiếm nhị phân theo tên ---
         public ThanhVien BinarySearchTheoTen(string ten)
         {
             // Đảm bảo danh sách được sắp xếp theo tên trước
@@ -195,7 +196,7 @@ namespace Nhom17_QuanLyThuVien
                 int cmp = string.Compare(dsThanhVien[mid].TenThanhVien, ten, StringComparison.OrdinalIgnoreCase);
 
                 if (cmp == 0)
-                    return dsThanhVien  [mid];
+                    return dsThanhVien[mid];
                 else if (cmp < 0)
                     left = mid + 1;
                 else
@@ -203,6 +204,12 @@ namespace Nhom17_QuanLyThuVien
             }
             return null;
         }
+
+        public List<ThanhVien> LayDanhSachThanhVien()
+        {
+            return dsThanhVien;
+        }
+
         public List<ThanhVien> LayDanhSachSapXepTheoMa()
         {
             SelectionSortTheoMa();
@@ -214,5 +221,29 @@ namespace Nhom17_QuanLyThuVien
             BubbleSortTheoTen();
             return dsThanhVien;
         }
+        public string TaoMaThanhVien() { 
+            List<ThanhVien> dstv= dsThanhVien;
+            int somax = 0;
+            foreach (ThanhVien tv in dstv)
+            {
+                string maTV = tv.MaThanhVien;
+                if (maTV.StartsWith("TV") && maTV.Length > 2)
+                {
+                    string soPhan = maTV.Substring(2);
+                    if (int.TryParse(soPhan, out int so))
+                    {
+                        if (so > somax)
+                        {
+                            somax = so;
+                        }
+                    }
+                }
+            }
+                int soMoi = somax + 1;
+                string maMoi = soMoi.ToString("D3");
+                return "TV" + maMoi;
+
+        }
+
     }
   }

@@ -32,20 +32,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ckcHienThiMatKhau = new System.Windows.Forms.CheckBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             btnDangNhap = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +73,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 61);
             this.panel1.TabIndex = 2;
-            
             // 
             // txtUser
             // 
@@ -84,6 +83,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(285, 27);
             this.txtUser.TabIndex = 2;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // panel2
             // 
@@ -92,17 +92,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(345, 1);
             this.panel2.TabIndex = 0;
-           
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.Profile;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // panel3
             // 
@@ -113,7 +102,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(348, 61);
             this.panel3.TabIndex = 2;
-            
             // 
             // txtPassWord
             // 
@@ -133,17 +121,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(345, 1);
             this.panel4.TabIndex = 0;
-            
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.Unlock;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 15);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
             // 
             // btnExit
             // 
@@ -171,16 +148,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "LOG-IN";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(160, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // ckcHienThiMatKhau
             // 
             this.ckcHienThiMatKhau.AutoSize = true;
@@ -193,6 +160,36 @@
             this.ckcHienThiMatKhau.Text = "Hiển thị mật khẩu";
             this.ckcHienThiMatKhau.UseVisualStyleBackColor = true;
             this.ckcHienThiMatKhau.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.Unlock;
+            this.pictureBox3.Location = new System.Drawing.Point(13, 15);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.Profile;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.download;
+            this.pictureBox1.Location = new System.Drawing.Point(160, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Log_in
             // 
@@ -214,10 +211,10 @@
             this.Load += new System.EventHandler(this.Log_in_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

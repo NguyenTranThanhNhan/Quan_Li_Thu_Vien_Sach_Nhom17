@@ -87,5 +87,10 @@ namespace Nhom17_QuanLyThuVien
                 txtPassWord.UseSystemPasswordChar = true;
             }
         }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

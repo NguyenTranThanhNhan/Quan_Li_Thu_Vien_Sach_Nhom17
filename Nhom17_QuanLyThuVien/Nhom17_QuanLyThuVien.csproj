@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietSachMuon.cs" />
     <Compile Include="Const.cs" />
     <Compile Include="CXuLyPhieuMuonTra.cs" />
     <Compile Include="FileDocGhi.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="GiaoDienSach.Designer.cs">
       <DependentUpon>GiaoDienSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="HienThiDSMuonTra.cs" />
     <Compile Include="ListUser.cs" />
     <Compile Include="Log-in.cs">
       <SubType>Form</SubType>
@@ -81,7 +83,6 @@
     <Compile Include="PhieuMuon.Designer.cs">
       <DependentUpon>PhieuMuon.cs</DependentUpon>
     </Compile>
-    <Compile Include="NguoiDung.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach.cs" />
@@ -144,6 +145,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ql.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-search-icon-png-image_320926.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-exit-icon-vectors-png-image_1737870.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1133833526-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-icon-vector-logo-template-600w-1425056537.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %285%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
