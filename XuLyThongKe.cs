@@ -47,20 +47,46 @@ namespace Nhom17_QuanLyThuVien
             dsThongKe = new List<ThongKe>();
         }
 
-        public List<ThongKe> ThongKeTheoNgay(DateTime? ngayBatDau, DateTime? ngayKetThuc)
+        public List<ThongKe> ThongKeTheoNgay(DateTime? ngayBatDau, DateTime? ngayKetThuc, string loaiDacBiet)
         {
-            // 1. Lọc các phiếu mượn theo khoảng thời gian
-            var phieuMuonDaLoc = _danhSachPhieuMuonTra
-                .Where(p =>
-                    (!ngayBatDau.HasValue || p.NgayMuon.Date >= ngayBatDau.Value.Date) &&
-                    (!ngayKetThuc.HasValue || p.NgayMuon.Date <= ngayKetThuc.Value.Date)
-                )
-                .ToList();
+            DateTime today = DateTime.Today.Date;
 
+            // Bắt đầu với danh sách gốc
+            // AsQueryable ; Nó thực hiện việc chuyển đổi một đối tượng IEnumerable<T> (ví dụ: List<MuonTra>) thành đối tượng IQueryable<T>.
+            var phieuMuonDaLoc = _danhSachPhieuMuonTra.AsQueryable();
+
+            
+            if (loaiDacBiet == "Quá Hạn")
+            {
+                phieuMuonDaLoc = phieuMuonDaLoc
+                    .Where(p =>
+                        p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra &&
+                        p.NgayTraDuKien.Date < today
+                    );
+            }
+            else if (loaiDacBiet == "Đến Hạn Hôm Nay")
+            {
+                phieuMuonDaLoc = phieuMuonDaLoc
+                    .Where(p =>
+                        p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra &&
+                        p.NgayTraDuKien.Date == today
+                    );
+            }
+            else
+            {
+                phieuMuonDaLoc = phieuMuonDaLoc
+                    .Where(p =>
+                        (!ngayBatDau.HasValue || p.NgayMuon.Date >= ngayBatDau.Value.Date) &&
+                        (!ngayKetThuc.HasValue || p.NgayMuon.Date <= ngayKetThuc.Value.Date)
+                    );
+            }
+
+            
+            var phieuMuonFinal = phieuMuonDaLoc.ToList();
             var ketQuaThongKe = new List<ThongKe>();
 
-            // 2. Duyệt qua từng phiếu và từng chi tiết sách
-            foreach (var phieu in phieuMuonDaLoc)
+            // 3. DUYỆT VÀ TRA CỨU DỮ LIỆU (Tên TV, Tác Giả)
+            foreach (var phieu in phieuMuonFinal)
             {
                 if (phieu.DanhSachChiTiet != null)
                 {
@@ -104,40 +130,59 @@ namespace Nhom17_QuanLyThuVien
         {
             DateTime today = DateTime.Today;
             DateTime? start = null;
-            DateTime? end = today;
+            DateTime? end = null;
+
+            string loaiDacBiet = null;
 
             switch (loaiThoiGian.ToLower())
             {
+                case "quá hạn":
+                case "late":
+                    loaiDacBiet = "Quá Hạn";
+                    break;
+
+                case "đến hạn hôm nay":
+                case "đến hạn":
+                    loaiDacBiet = "Đến Hạn Hôm Nay";
+                    break;
                 case "ngày":
                 case "day":
                     start = today;
+                    end = today; 
                     break;
+
                 case "tuần":
                 case "week":
                     // Tính toán ngày đầu tuần (Giả sử bắt đầu từ Thứ Hai)
+                    // Lấy độ lệch từ ngày hiện tại đến Thứ Hai (0)
                     int diff = (7 + (today.DayOfWeek - DayOfWeek.Monday)) % 7;
                     start = today.AddDays(-1 * diff);
-                    end = today;
+
+                   
+                    end = start.Value.AddDays(6);
                     break;
+
                 case "tháng":
                 case "month":
                     start = new DateTime(today.Year, today.Month, 1);
-                    end = today;
+                    // Lấy ngày 1 tháng sau, rồi trừ đi 1 ngày
+                    end = start.Value.AddMonths(1).AddDays(-1);
                     break;
+
                 case "năm":
                 case "year":
                     start = new DateTime(today.Year, 1, 1);
-                    end = today;
+                    end = new DateTime(today.Year, 12, 31);
                     break;
+
                 case "tất cả":
                 default:
-                    // Không đặt ngày bắt đầu và kết thúc
+                   
                     start = null;
                     end = null;
                     break;
             }
-
-            return ThongKeTheoNgay(start, end);
+            return ThongKeTheoNgay(start, end, loaiDacBiet);
         }
 
     }

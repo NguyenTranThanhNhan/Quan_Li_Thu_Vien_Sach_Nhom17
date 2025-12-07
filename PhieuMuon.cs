@@ -604,6 +604,7 @@ namespace Nhom17_QuanLyThuVien
             txttongsltra.Text = phieu.TongSoLuongMuon.ToString();
             dtpngaymuon.Value = phieu.NgayMuon;
             dtpngaytra.Value = phieu.NgayTraDuKien;
+            txtslghtra.Text = phieu.SoLanGiaHan.ToString();
             // Đổ thông tin chi tiết 3 cuốn sách lên controls
             FillSachDetailTraSach(phieu.DanhSachChiTiet);
         }
@@ -690,6 +691,21 @@ namespace Nhom17_QuanLyThuVien
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtnMuon_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGiaHan_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

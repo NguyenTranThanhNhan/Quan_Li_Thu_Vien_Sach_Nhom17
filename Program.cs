@@ -14,6 +14,8 @@ namespace Nhom17_QuanLyThuVien
         [STAThread]
         static void Main()
         {
+            
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             try

@@ -15,10 +15,12 @@ namespace Nhom17_QuanLyThuVien
     public partial class MainThuVien : Form 
     {
         public bool isExit = true;
-        private XuLySach xlSach = new XuLySach();
-        private XuLyThanhVien xlThanhVien = new XuLyThanhVien();
+        private XuLyThongKe xlThongKe = XuLyThongKe.Instance;
+        private XuLySach xlSach = XuLySach.Instance;
+        private XuLyThanhVien xlThanhVien = XuLyThanhVien.Instance;
+        private CXuLyPhieuMuonTra xlMuonTra = CXuLyPhieuMuonTra.Instance;
 
-        private int vitri = -1;
+        //private int vitri = -1;
         public event EventHandler LogOut;
         public MainThuVien()
         {
@@ -60,150 +62,73 @@ namespace Nhom17_QuanLyThuVien
             if (isExit) 
                 Application.Exit();
         }
+        private void mượnTrảSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new PhieuMuon().Show();
+        }
 
-        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new GiaoDienQLThanhVien().Show();
         }
 
-        private void sáchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new GiaoDienSach().Show();
         }
-        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+        private void HienThiThongKe(string loaiThoiGian)
         {
-            new frmThongKe().Show();
+            List<ThongKe> duLieuHienThi = xlThongKe.ThongKeTheoLoai(loaiThoiGian);
+            dgvThongKe.DataSource = null;
+            dgvThongKe.DataSource = duLieuHienThi;
+            if (dgvThongKe.Columns.Count > 0)
+            {
+                dgvThongKe.Columns["NgayMuon"].HeaderText = "Ngày Mượn";
+                dgvThongKe.Columns["TenTV"].HeaderText = "Thành Viên Mượn";
+                dgvThongKe.Columns["MaPhieu"].HeaderText = "Mã Phiếu";
+                dgvThongKe.Columns["MaSach"].HeaderText = "Mã Sách";
+                dgvThongKe.Columns["TenSach"].HeaderText = "Tên Sách";
+                dgvThongKe.Columns["TacGia"].HeaderText = "Tác Giả";
+                dgvThongKe.Columns["SoluongMuon"].HeaderText = "SL Mượn";
+                dgvThongKe.Columns["TrangThai"].HeaderText = "Trạng Thái";
+                dgvThongKe.Columns["NgayMuon"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            }
         }
         private void MainThuVien_Load(object sender, EventArgs e)
         {
-            xlSach.DocFile();
             xlThanhVien.DocFile();
-            HienThiDanhSachThanhVien(xlThanhVien.LayDanhSachThanhVien());
-            
+            xlSach.DocFile();
+            xlMuonTra.DocFile();
+            List<MuonTra> danhSachPhieuMuon = xlMuonTra.LayDSM();
+            xlThongKe = new XuLyThongKe(danhSachPhieuMuon);
+
+            cbbThongKe.Items.AddRange(new object[] { "--- Tất cả ---", "Ngày", "Tuần", "Tháng", "Năm", "Quá Hạn", "Đến Hạn Hôm Nay" });
+            cbbThongKe.SelectedIndex = 0;
+
+            // Thống kê mặc định khi load form (ví dụ: Tất cả)
+            HienThiThongKe("--- Tất cả ---");
+
         }
-        private void HienThiDanhSach(List<Sach> ds)
+        private void btnThongKe_Click(object sender, EventArgs e)
         {
-            xlSach.SelectionSortTheoMa();
-            dgvDST.DataSource = null;
-            dgvDST.DataSource = ds;
-        }
-
-
-
-
-        private void HienThiDanhSachThanhVien(List<ThanhVien> ds)
-        {
-            xlThanhVien.LayDanhSachThanhVien();
-            dgvDST.DataSource = null;
-            dgvDST.DataSource = ds;
-        }
-
-        private void ClearInputFields()
-        {
-            txtMaTv.Clear();
-            txtTenTV.Clear();
-            txtSDT.Clear();
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string mak=txtSDT.Text.Trim();
-            string maCanTim = txtMaTv.Text.Trim();
-
-            if (string.IsNullOrEmpty(maCanTim))
+            if (cbbThongKe.SelectedItem != null)
             {
-                MessageBox.Show("Vui lòng nhập mã sách cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            ThanhVien kq = xlThanhVien.LinearSearchTheoMa(maCanTim);
-
-            if (kq != null)
-            {
-                txtSDT.Text = kq.SDT;
-                txtMaTv.Text = kq.MaThanhVien;
-                txtTenTV.Text = kq.TenThanhVien;
-               
-                dgvDST.DataSource = null;
-                dgvDST.DataSource = new List<ThanhVien> { kq };
-
-                MessageBox.Show("Đã tìm thấy sách có mã: " + maCanTim, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy sách có mã: " + maCanTim, "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDanhSachThanhVien(xlThanhVien.LayDanhSach());
+                string loaiThoiGian = cbbThongKe.SelectedItem.ToString();
+                HienThiThongKe(loaiThoiGian);
             }
         }
-
-       
-
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void Thoat_Click(object sender, EventArgs e)
         {
-            HienThiDanhSach(xlSach.LayDanhSach());
-            ClearInputFields();
-        }
-
-        private void toolStripXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult kq = MessageBox.Show("Bạn muốn xóa sách?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
-                bool kqxoa = xlSach.XoaSach(txtMaTv.Text);
-                if (kqxoa == true)
-                {
-                    MessageBox.Show("Xóa sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    HienThiDanhSach(xlSach.LayDanhSach());
-                    ClearInputFields();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa sách thất bại! Không tìm thấy mã sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                this.Close();
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            string ma = txtMaTv .Text;
-            string ten = txtTenTV.Text;
-            int sdt = int.Parse(txtSDT.Text);
 
-
-
-
-            ThanhVien tv = new ThanhVien(ma, ten," ","", DateTime.Today, DateTime.Today, "", "");
-            bool kqsua = xlThanhVien.SuaTV(tv);
-            if (kqsua == true)
-            {
-                MessageBox.Show("Sửa Thành Viên  thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDanhSachThanhVien( xlThanhVien.LayDanhSach());
-                ClearInputFields();
-            }
-            else
-            {
-                MessageBox.Show("Sửa thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void dgvDST_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                vitri = e.RowIndex;
-                Sach s = new Sach();
-                ThanhVien tv = new ThanhVien();
-                s = xlSach.DSSach[vitri];
-                tv = xlThanhVien.DSThanhVien[vitri];
-                txtMaTv.Text = tv.MaThanhVien;
-                txtTenTV.Text = tv.TenThanhVien;
-                txtSDT.Text = tv.SDT;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        
     }
 }

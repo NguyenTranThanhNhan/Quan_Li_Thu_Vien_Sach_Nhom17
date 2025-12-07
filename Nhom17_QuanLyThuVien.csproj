@@ -50,12 +50,6 @@
     <Compile Include="Const.cs" />
     <Compile Include="CXuLyPhieuMuonTra.cs" />
     <Compile Include="FileDocGhi.cs" />
-    <Compile Include="frmThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThongKe.Designer.cs">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
-    </Compile>
     <Compile Include="GiaoDienQLThanhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,15 +86,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sach.cs" />
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThanhVien.cs" />
     <Compile Include="ThongKe.cs" />
     <Compile Include="XuLyThongKe.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="XuLySach.cs" />
     <Compile Include="XuLyThanhVien.cs" />
-    <EmbeddedResource Include="frmThongKe.resx">
-      <DependentUpon>frmThongKe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDienQLThanhVien.resx">
       <DependentUpon>GiaoDienQLThanhVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +123,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -70,7 +70,6 @@ namespace Nhom17_QuanLyThuVien
         {
             if (tim(tv.MaThanhVien))
             {
-                Console.WriteLine("Mã thành viên đã tồn tại, vui lòng nhập lại mã !!");
                 return false;
             }
             else
@@ -202,6 +201,19 @@ namespace Nhom17_QuanLyThuVien
                     left = mid + 1;
                 else
                     right = mid - 1;
+            }
+            return null;
+        }
+        public ThanhVien LinearSearchTheoTen(string tenCanTim)
+        {
+            string tuKhoa = tenCanTim.Trim().ToLower();
+
+            foreach (var tv in dsThanhVien)
+            {
+                if (tv.TenThanhVien.Trim().Equals(tenCanTim, StringComparison.OrdinalIgnoreCase))
+                {
+                    return tv;
+                }
             }
             return null;
         }
