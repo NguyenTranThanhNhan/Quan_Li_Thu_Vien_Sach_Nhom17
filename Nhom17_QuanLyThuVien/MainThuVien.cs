@@ -19,8 +19,6 @@ namespace Nhom17_QuanLyThuVien
         private XuLySach xlSach = XuLySach.Instance;
         private XuLyThanhVien xlThanhVien = XuLyThanhVien.Instance;
         private CXuLyPhieuMuonTra xlMuonTra = CXuLyPhieuMuonTra.Instance;
-
-        //private int vitri = -1;
         public event EventHandler LogOut;
         public MainThuVien()
         {
@@ -45,11 +43,7 @@ namespace Nhom17_QuanLyThuVien
             LogOut(this, new EventArgs());
         }
 
-        private void MainThuVien_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (isExit) 
-                Application.Exit();
-        }
+        
         private void mượnTrảSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new PhieuMuon().Show();
@@ -104,8 +98,6 @@ namespace Nhom17_QuanLyThuVien
 
             cbbThongKe.Items.AddRange(new object[] { "--- Tất cả ---", "Ngày", "Tuần", "Tháng", "Năm", "Quá Hạn", "Đến Hạn Hôm Nay" });
             cbbThongKe.SelectedIndex = 0;
-
-            // Thống kê mặc định khi load form (ví dụ: Tất cả)
             HienThiThongKe("--- Tất cả ---");
 
         }
@@ -122,7 +114,8 @@ namespace Nhom17_QuanLyThuVien
             DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
+
             }
         }
 

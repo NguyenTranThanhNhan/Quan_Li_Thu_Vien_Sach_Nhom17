@@ -57,7 +57,6 @@ namespace Nhom17_QuanLyThuVien
             }
             return false;
         }
-        // kiem tra ton tai ma sach trong phieu
         public Sach TimSach(string ma)
         {
             return dsSach.FirstOrDefault(s => s.MaSach == ma);
@@ -135,9 +134,6 @@ namespace Nhom17_QuanLyThuVien
             else
                 return false;
         }
-
-
-        // --- Sắp xếp theo mã sách (ISBN) - Selection Sort ---
         public void SelectionSortTheoMa()
         {
             for (int i = 0; i < dsSach.Count - 1; i++)
@@ -145,7 +141,6 @@ namespace Nhom17_QuanLyThuVien
                 int min = i;
                 for (int j = i + 1; j < dsSach.Count; j++)
                 {
-                    //  StringComparison.OrdinalIgnoreCase : so sánh chuỗi
                     if (string.Compare(dsSach[j].MaSach, dsSach[min].MaSach, StringComparison.OrdinalIgnoreCase) < 0)
                         min = j;
                 }
@@ -166,7 +161,6 @@ namespace Nhom17_QuanLyThuVien
             {
                 for (int j = 0; j < dsSach.Count - i - 1; j++)
                 {
-                    //  StringComparison.OrdinalIgnoreCase : so sánh chuỗi
                     if (string.Compare(dsSach[j].TenSach, dsSach[j + 1].TenSach, StringComparison.OrdinalIgnoreCase) > 0)
                     {
                         Sach temp = dsSach[j];
@@ -191,13 +185,11 @@ namespace Nhom17_QuanLyThuVien
         // --- Tìm kiếm nhị phân theo tên sách ---
         public Sach BinarySearchTheoTen(string ten)
         {
-            // Đảm bảo danh sách được sắp xếp theo tên trước
             BubbleSortTheoTen();
 
             int left = 0, right = dsSach.Count - 1;
             while (left <= right)
             {
-                //  StringComparison.OrdinalIgnoreCase : so sánh chuỗi
                 int mid = (left + right) / 2;
                 int cmp = string.Compare(dsSach[mid].TenSach, ten, StringComparison.OrdinalIgnoreCase);
 
@@ -233,7 +225,7 @@ namespace Nhom17_QuanLyThuVien
                 case "Sách Tiểu Thuyết": return "06";
                 case "Sách kinh doanh": return "07";
                 case "Sách kinh dị": return "08";
-                default: return "99"; // Mã mặc định cho các thể loại khác
+                default: return "99";
             }
         }
         private string TinhCheckDigit(string ma12ChuSo)
@@ -247,68 +239,18 @@ namespace Nhom17_QuanLyThuVien
                 sum += (i % 2 == 0) ? digit : digit * 3;
             }
             int soDu = (int)(sum % 10);
-            // Công thức tính Check Digit: (10 - số dư) MOD 10
 
             return ((10 - soDu) % 10).ToString();
         }
-        //public string TaoMaISBNTheoTheLoai(string maTheLoaiSo) // maTheLoaiSo là "01", "07", ...
-        //{
-        //    string tienToKhongGach = "97860458"; // 8 ký tự
-        //    string tienToHoanChinh = tienToKhongGach + maTheLoaiSo; // 10 ký tự (VD: 9786045801)
-        //    int soMax = 0;
-
-        //    // 1. TÌM SỐ THỨ TỰ LỚN NHẤT
-        //    foreach (Sach s in dsSach)
-        //    {
-        //        // Loại bỏ gạch ngang để tìm kiếm tiền tố và STT
-        //        string maSachDaLuu = s.MaSach.Replace("-", "");
-
-        //        if (maSachDaLuu.StartsWith(tienToHoanChinh) && maSachDaLuu.Length == 13)
-        //        {
-        //            try
-        //            {
-        //                // Cắt 2 chữ số STT (bắt đầu từ vị trí 10, dài 2 ký tự)
-        //                string phanSoStr = maSachDaLuu.Substring(tienToHoanChinh.Length, 2);
-
-        //                if (int.TryParse(phanSoStr, out int soHienTai))
-        //                {
-        //                    if (soHienTai > soMax)
-        //                    {
-        //                        soMax = soHienTai;
-        //                    }
-        //                }
-        //            }
-        //            catch { }
-        //        }
-        //    }
-
-        //    int soTiepTheo = soMax + 1;
-        //    string soThuTuMoi = soTiepTheo.ToString("D2"); // Dùng "D2" (Ví dụ: 1 -> "01")
-
-        //    // 2. TÍNH CHỮ SỐ KIỂM TRA
-        //    string ma12ChuSo = tienToHoanChinh + soThuTuMoi; // 12 ký tự (VD: 978604580101)
-        //    string checkDigit = TinhCheckDigit(ma12ChuSo);
-
-        //    // 3. ĐỊNH DẠNG MÃ 17 KÝ TỰ CÓ GẠCH NGANG
-        //    // ma12ChuSo.Substring(8, 4) là "0101" (Mã TL (2) + STT (2))
-        //    string maISBNHoanChinh = ma12ChuSo.Substring(0, 3) + "-" +
-        //                             ma12ChuSo.Substring(3, 3) + "-" +
-        //                             ma12ChuSo.Substring(6, 2) + "-" +
-        //                             ma12ChuSo.Substring(8, 4) + "-" + checkDigit;
-
-        //    return maISBNHoanChinh;
-        //}
         private string FormatISBN(string isbn13)
         {
             return $"{isbn13.Substring(0, 3)}-{isbn13.Substring(3, 3)}-{isbn13.Substring(6, 2)}-{isbn13.Substring(8, 4)}-{isbn13[12]}";
         }
 
-        // Hàm tạo mã sách theo thể loại
         public string TaoMaISBNTheoTheLoai(string maTheLoai)
         {
-            string prefix = "97860458" + maTheLoai;   // 10 chữ số đầu :9786045801
+            string prefix = "97860458" + maTheLoai;
 
-            // Tìm số thứ tự lớn nhất (2 số cuối trước check digit)
             int maxSTT = dsSach
                 .Select(s => s.MaSach.Replace("-", ""))
                 .Where(m => m.StartsWith(prefix) && m.Length == 13)
@@ -316,13 +258,10 @@ namespace Nhom17_QuanLyThuVien
                 .DefaultIfEmpty(0)
                 .Max();
 
-            int sttMoi = maxSTT + 1; // 4 
-            string stt2 = sttMoi.ToString("D2"); //04
+            int sttMoi = maxSTT + 1;
+            string stt2 = sttMoi.ToString("D2");
 
-            // Tạo 12 chữ số đầu
-            string ma12 = prefix + stt2; // 978604580104
-
-            // Tính chữ số kiểm tra
+            string ma12 = prefix + stt2;
             string check = TinhCheckDigit(ma12);
 
             string isbn13 = ma12 + check;
@@ -331,26 +270,16 @@ namespace Nhom17_QuanLyThuVien
         }
         public bool KiemTraISBNHopLe(string maISBNCoHoacKhongDau)
         {
-            // Loại bỏ dấu gạch ngang để có chuỗi 13 chữ số
             string soISBN13ChuSo = maISBNCoHoacKhongDau.Replace("-", "").Trim();
 
-            // 1. Kiểm tra độ dài phải là 13 chữ số
             if (soISBN13ChuSo.Length != 13 || !long.TryParse(soISBN13ChuSo.Substring(0, 12), out _))
                 return false;
 
-            // 2. Kiểm tra Check Digit
-            // Lấy 12 ký tự đầu tiên
             string ma12ChuSo = soISBN13ChuSo.Substring(0, 12);
-            // Lấy ký tự cuối cùng (Check Digit nhập)
             string checkDigitNhap = soISBN13ChuSo.Substring(12, 1);
-
-            // Tính Check Digit thực tế
             string checkDigitThucTe = TinhCheckDigit(ma12ChuSo);
-
             return checkDigitNhap.Equals(checkDigitThucTe, StringComparison.Ordinal);
         }
-
-        // cach khac 
         public string TaoMaSachTheoTheLoaiTimestamp(string maTL)
         {
             string time = DateTime.Now.ToString("yyyyMMdd");

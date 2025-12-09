@@ -50,9 +50,6 @@ namespace Nhom17_QuanLyThuVien
         public List<ThongKe> ThongKeTheoNgay(DateTime? ngayBatDau, DateTime? ngayKetThuc, string loaiDacBiet)
         {
             DateTime today = DateTime.Today.Date;
-
-            // Bắt đầu với danh sách gốc
-            // AsQueryable ; Nó thực hiện việc chuyển đổi một đối tượng IEnumerable<T> (ví dụ: List<MuonTra>) thành đối tượng IQueryable<T>.
             var phieuMuonDaLoc = _danhSachPhieuMuonTra.AsQueryable();
 
             
@@ -84,8 +81,6 @@ namespace Nhom17_QuanLyThuVien
             
             var phieuMuonFinal = phieuMuonDaLoc.ToList();
             var ketQuaThongKe = new List<ThongKe>();
-
-            // 3. DUYỆT VÀ TRA CỨU DỮ LIỆU (Tên TV, Tác Giả)
             foreach (var phieu in phieuMuonFinal)
             {
                 if (phieu.DanhSachChiTiet != null)
@@ -154,8 +149,6 @@ namespace Nhom17_QuanLyThuVien
 
                 case "tuần":
                 case "week":
-                    // Tính toán ngày đầu tuần (Giả sử bắt đầu từ Thứ Hai)
-                    // Lấy độ lệch từ ngày hiện tại đến Thứ Hai (0)
                     int diff = (7 + (today.DayOfWeek - DayOfWeek.Monday)) % 7;
                     start = today.AddDays(-1 * diff);
 
@@ -166,7 +159,6 @@ namespace Nhom17_QuanLyThuVien
                 case "tháng":
                 case "month":
                     start = new DateTime(today.Year, today.Month, 1);
-                    // Lấy ngày 1 tháng sau, rồi trừ đi 1 ngày
                     end = start.Value.AddMonths(1).AddDays(-1);
                     break;
 

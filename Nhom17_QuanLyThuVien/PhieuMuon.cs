@@ -17,7 +17,7 @@ namespace Nhom17_QuanLyThuVien
         private XuLySach xlSach = XuLySach.Instance;
         private XuLyThanhVien xlThanhVien = XuLyThanhVien.Instance;
         private CXuLyPhieuMuonTra xlMuonTra = CXuLyPhieuMuonTra.Instance;
-
+        private bool isExit = false;
         public PhieuMuon()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace Nhom17_QuanLyThuVien
         private void ClearInputFields()
         {
             txtmaphieu.Text = xlMuonTra.TaoMaPhieuTuDong();
-            cbbTV.SelectedIndex = -1; // Bỏ chọn Mã TV
+            cbbTV.SelectedIndex = -1;
             txttentv.Clear();
             txtsdt.Clear();
             dpkNgayMuon.Value = DateTime.Today;
@@ -123,8 +123,6 @@ namespace Nhom17_QuanLyThuVien
                 return;
             }
             List<ChiTietSachMuon> chiTietListMoi = new List<ChiTietSachMuon>();
-
-            // (Bạn cần có hàm GetChiTiet tương tự như trong btnMuon_Click)
             GetChiTiet(cbbMaSach1, num1, chiTietListMoi, maPhieuCanSua);
             GetChiTiet(cbbMaSach2, num2, chiTietListMoi, maPhieuCanSua);
             GetChiTiet(cbbMaSach3, num3, chiTietListMoi, maPhieuCanSua);
@@ -165,7 +163,6 @@ namespace Nhom17_QuanLyThuVien
             if (phieuGoc != null)
             {
                 LoadPhieuDetails(phieuGoc);
-                //LỌC DGV: Chỉ hiển thị phiếu này
                 List<MuonTra> dsPhieuTimDuoc = new List<MuonTra> { phieuGoc };
                 List<HienThiDSMuonTra> dsHienThi = xlMuonTra.TaoDanhSachHienThi(dsPhieuTimDuoc);
                 HienThiDanhSach(dsPhieuTimDuoc);
@@ -192,7 +189,7 @@ namespace Nhom17_QuanLyThuVien
                 rbtnTra.Checked = true;
                 rbtnMuon.Checked = false;
             }
-            else // TrangThaiPhieu.ChuaTra
+            else
             {
                 rbtnTra.Checked = false;
                 rbtnMuon.Checked = true;
@@ -240,25 +237,21 @@ namespace Nhom17_QuanLyThuVien
             DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
+                isExit = true;
                 this.Close();
                 new MainThuVien().Show();
             }
         }
         private void ClearControlsSachDetail()
         {
-            // Xóa/Thiết lập lại Sách 1
             cbbMaSach1.SelectedIndex = -1;
             num1.Value = 0;
             txtten1.Clear();
             txtsl1.Clear();
-
-            // Xóa/Thiết lập lại Sách 2
             cbbMaSach2.SelectedIndex = -1;
             num2.Value = 0;
             txtten2.Clear();
             txtsl2.Clear();
-
-            // Xóa/Thiết lập lại Sách 3
             cbbMaSach3.SelectedIndex = -1;
             num3.Value = 0;
             txtten3.Clear();
@@ -274,10 +267,9 @@ namespace Nhom17_QuanLyThuVien
             var ct2 = ds.ElementAtOrDefault(1);
             var ct3 = ds.ElementAtOrDefault(2);
 
-            // --- Sách 1 ---
             if (ct1 != null)
             {
-                cbbMaSach1.SelectedValue = ct1.MaSach;   // 🔥 GIẢI PHÁP CHÍNH
+                cbbMaSach1.SelectedValue = ct1.MaSach;
                 num1.Value = ct1.SlMuon;
             }
             else
@@ -286,10 +278,9 @@ namespace Nhom17_QuanLyThuVien
                 num1.Value = 0;
             }
 
-            // --- Sách 2 ---
             if (ct2 != null)
             {
-                cbbMaSach2.SelectedValue = ct2.MaSach;   // 🔥 GIẢI PHÁP CHÍNH
+                cbbMaSach2.SelectedValue = ct2.MaSach;
                 num2.Value = ct2.SlMuon;
             }
             else
@@ -298,10 +289,9 @@ namespace Nhom17_QuanLyThuVien
                 num2.Value = 0;
             }
 
-            // --- Sách 3 ---
             if (ct3 != null)
             {
-                cbbMaSach3.SelectedValue = ct3.MaSach;   // 🔥 GIẢI PHÁP CHÍNH
+                cbbMaSach3.SelectedValue = ct3.MaSach;
                 num3.Value = ct3.SlMuon;
             }
             else
@@ -310,12 +300,10 @@ namespace Nhom17_QuanLyThuVien
                 num3.Value = 0;
             }
 
-            // Bật lại sự kiện
             cbbMaSach1.SelectedIndexChanged += cbbMaSach1_SelectedIndexChanged;
             cbbMaSach2.SelectedIndexChanged += cbbMaSach2_SelectedIndexChanged;
             cbbMaSach3.SelectedIndexChanged += cbbMaSach3_SelectedIndexChanged;
 
-            // --- Gọi SelectedIndexChanged thủ công để load tên & SL ---
             cbbMaSach1_SelectedIndexChanged(cbbMaSach1, EventArgs.Empty);
             cbbMaSach2_SelectedIndexChanged(cbbMaSach2, EventArgs.Empty);
             cbbMaSach3_SelectedIndexChanged(cbbMaSach3, EventArgs.Empty);
@@ -323,34 +311,26 @@ namespace Nhom17_QuanLyThuVien
 
         private void DaTaMuonTra_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Bảo đảm click không phải header
             if (e.RowIndex < 0 || e.RowIndex >= DaTaMuonTra.Rows.Count)
                 return;
 
-            // Lấy đối tượng hiển thị của dòng được click
             var item = DaTaMuonTra.Rows[e.RowIndex].DataBoundItem as HienThiDSMuonTra;
             if (item == null) return;
 
-            // Lấy phiếu gốc theo mã phiếu
             var phieuGoc = xlMuonTra.TimPhieuMuonTraTheoMa(item.MaPhieu);
             if (phieuGoc == null) return;
 
-            // --- ĐỔ THÔNG TIN CHUNG LÊN GIAO DIỆN ---
-            // Mã phiếu
             txtmaphieu.Text = phieuGoc.MaPhieu;
 
-            // Thành viên: set SelectedValue để combobox chọn đúng item (yêu cầu ValueMember đã được set)
             try
             {
                 cbbTV.SelectedValue = phieuGoc.MaTV;
             }
             catch
             {
-                // Nếu SelectedValue không hoạt động (ví dụ DataSource chưa set), fallback gán Text
                 cbbTV.Text = phieuGoc.MaTV;
             }
 
-            // Đảm bảo tên và sđt hiện chính xác bằng cách lấy trực tiếp từ xlThanhVien
             var tv = xlThanhVien.TimTV(phieuGoc.MaTV);
             if (tv != null)
             {
@@ -363,15 +343,12 @@ namespace Nhom17_QuanLyThuVien
                 txtsdt.Clear();
             }
 
-            // Ngày mượn / ngày trả dự kiến
             dpkNgayMuon.Value = phieuGoc.NgayMuon;
             dpkNgayTra.Value = phieuGoc.NgayTraDuKien;
 
-            // Số lần gia hạn và tổng SL
             txtgiahan.Text = phieuGoc.SoLanGiaHan.ToString();
             txttongsl.Text = phieuGoc.TongSoLuongMuon.ToString();
 
-            // Trạng thái radio (Mượn / Trả)
             if (phieuGoc.TrangThai == MuonTra.TrangThaiPhieu.DaTra)
             {
                 rbtnTra.Checked = true;
@@ -383,10 +360,7 @@ namespace Nhom17_QuanLyThuVien
                 rbtnMuon.Checked = true;
             }
 
-            // Gọi hàm đổ chi tiết sách (3 cuốn)
             FillSachDetail(phieuGoc.DanhSachChiTiet);
-
-            // Bật / tắt nút sửa và gia hạn theo trạng thái phiếu
             bool isChuaTra = (phieuGoc.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra);
             Sua.Enabled = isChuaTra;
             btnGiaHan.Enabled = isChuaTra;
@@ -403,7 +377,6 @@ namespace Nhom17_QuanLyThuVien
                 
                 if (sachChon != null)
                 {
-                    // Sử dụng ChiTietMuon đã thống nhất
                     ChiTietSachMuon ct = new ChiTietSachMuon(maPhieu, maS, sachChon.TenSach, sachChon.TacGia, sl);
                     chiTietList.Add(ct);
                 }
@@ -478,7 +451,6 @@ namespace Nhom17_QuanLyThuVien
         }
         private void num_ValueChanged(object sender, EventArgs e)
         {
-            // Tính tổng số lượng từ 3 NumericUpDown
             int tongSL = (int)num1.Value + (int)num2.Value + (int)num3.Value;
             txttongsl.Text = tongSL.ToString();
         }
@@ -501,41 +473,37 @@ namespace Nhom17_QuanLyThuVien
                     dpkNgayTra.Value = phieuDaSua.NgayTraDuKien;
                 }
 
-                // Cập nhật DGV
                 HienThiDanhSach(xlMuonTra.LayDSM());
             }
         }
 
-
-        // PHẦN TRẢ SÁCH
         private void btnthoattra_Click(object sender, EventArgs e)
         {
             DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
+                isExit = true;
                 this.Close();
                 new MainThuVien().Show();
             }
         }
         private void HienThiDSPhieuChuaTra()
         {
-            // 1. Lấy danh sách các phiếu đang mượn (Chưa Trả)
             var dsDangMuon = xlMuonTra.LayDSM().Where(p => p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra).ToList();
-            // 2. Làm phẳng dữ liệu
+            
             var dsHienThi= xlMuonTra.TaoDanhSachHienThi(dsDangMuon);
 
-            // 3. Gán vào DGV của Tab Trả Sách
             dgvTraSach.DataSource = dsHienThi;
         }
         private void ClearControlsTraSach()
         {
-            txtmptra.Clear(); // Ô tìm kiếm
+            txtmptra.Clear();
             txtmatvtra.Clear();
             txttentvtra.Clear();
             txtsdttra.Clear();
             txttongsltra.Clear();
             txtslghtra.Clear();
-            txtmpt.Clear(); // Mã phiếu đang hiển thị
+            txtmpt.Clear();
             dtpngaymuon.Value = DateTime.Today;
             dtpngaytra.Value = DateTime.Today;
             ClearSachDetailTraSach();
@@ -556,14 +524,12 @@ namespace Nhom17_QuanLyThuVien
         }
         private void FillSachDetailTraSach(List<ChiTietSachMuon> chiTietList)
         {
-            // Đảm bảo Form luôn có một hàm clear chi tiết sách cho tab Trả Sách
             ClearSachDetailTraSach();
             if (chiTietList == null || chiTietList.Count == 0)
             {
                 return;
             }
 
-            // --- Sách 1 (Index 0) ---
             if (chiTietList.Count >= 1)
             {
                 var sach1 = chiTietList[0];
@@ -572,7 +538,6 @@ namespace Nhom17_QuanLyThuVien
                 txtsl1tra.Text = sach1.SlMuon.ToString();
             }
 
-            // --- Sách 2 (Index 1) ---
             if (chiTietList.Count >= 2)
             {
                 var sach2 = chiTietList[1];
@@ -581,7 +546,6 @@ namespace Nhom17_QuanLyThuVien
                 txtsl2tra.Text = sach2.SlMuon.ToString();
             }
 
-            // --- Sách 3 (Index 2) ---
             if (chiTietList.Count >= 3)
             {
                 var sach3 = chiTietList[2];
@@ -609,7 +573,6 @@ namespace Nhom17_QuanLyThuVien
             dtpngaymuon.Value = phieu.NgayMuon;
             dtpngaytra.Value = phieu.NgayTraDuKien;
             txtslghtra.Text = phieu.SoLanGiaHan.ToString();
-            // Đổ thông tin chi tiết 3 cuốn sách lên controls
             FillSachDetailTraSach(phieu.DanhSachChiTiet);
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -721,8 +684,6 @@ namespace Nhom17_QuanLyThuVien
 
             dtThongTin.Rows.Add(r);
 
-            // Lấy DataTable danh sách sách từ DataGridView
-
             DataTable dtDanhSach;
 
             if (DaTaMuonTra.DataSource is DataTable)
@@ -747,8 +708,6 @@ namespace Nhom17_QuanLyThuVien
                     foreach (DataGridViewRow row in DaTaMuonTra.Rows)
                     {
                         if (row.IsNewRow) continue;
-
-                        // Lấy Mã Phiếu để lọc
                         string maPhieuRow = row.Cells[0].Value?.ToString();
 
                         if (maPhieuRow != maPhieuDangIn)
@@ -756,7 +715,6 @@ namespace Nhom17_QuanLyThuVien
                         var dr = dtDanhSach.NewRow();
                         dr["MaSach"] = row.Cells[4].Value?.ToString() ?? "";
                         dr["TenSach"] = row.Cells[5].Value?.ToString() ?? "";
-                        //dr["SoLuong"] = row.Cells[6].Value ?? 0;
                         int soLuong = 0;
                         Int32.TryParse(row.Cells[6].Value?.ToString(), out soLuong);
                         dr["SoLuong"] = soLuong;
@@ -765,12 +723,25 @@ namespace Nhom17_QuanLyThuVien
                 }
             }
 
-            // Mở form in
             PhieuIn frm = new PhieuIn();
             frm.dtThongTin = dtThongTin;
             frm.dtDanhSach = dtDanhSach;
             frm.ShowDialog();
             ClearInputFields();
+        }
+
+        private void PhieuMuon_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isExit) return;
+            DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                new MainThuVien().Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -48,14 +48,5 @@ namespace Nhom17_QuanLyThuVien
         public int NamXuatBan { get => namXuatBan; set => namXuatBan = value; }
         public int SoLuongCon { get => soLuongCon; set => soLuongCon = value; }
 
-        //public string TinhTrang
-        //{
-        //    get
-        //    {
-        //        if (SoLuongCon <= 0) return "Hết";
-        //        return "Còn";
-        //    }
-        //}
-
     }
 }

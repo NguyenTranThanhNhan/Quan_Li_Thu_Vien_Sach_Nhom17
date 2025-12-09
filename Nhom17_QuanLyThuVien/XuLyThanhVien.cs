@@ -61,7 +61,7 @@ namespace Nhom17_QuanLyThuVien
             return false;
 
         }
-        // kiem tra ton tai thanh vien trong phieu
+
         public ThanhVien TimTV(string ma)
         {
             return dsThanhVien.FirstOrDefault(tv => tv.MaThanhVien.Equals(ma, StringComparison.OrdinalIgnoreCase));
@@ -108,7 +108,6 @@ namespace Nhom17_QuanLyThuVien
         {
             for (int i = 0; i < dsThanhVien.Count; i++)
             {
-                //  StringComparison.OrdinalIgnoreCase : so sánh chuỗi
                 if (dsThanhVien[i].MaThanhVien.Equals(tv, StringComparison.OrdinalIgnoreCase))
                     return i;
             }
@@ -141,7 +140,6 @@ namespace Nhom17_QuanLyThuVien
                 int min = i;
                 for (int j = i + 1; j < dsThanhVien.Count; j++)
                 {
-                    //  StringComparison.OrdinalIgnoreCase : so sánh chuỗi
                     if (string.Compare(dsThanhVien[j].MaThanhVien, dsThanhVien[min].MaThanhVien, StringComparison.OrdinalIgnoreCase) < 0)
                         min = j;
                 }
@@ -186,7 +184,6 @@ namespace Nhom17_QuanLyThuVien
         // --- Tìm kiếm nhị phân theo tên ---
         public ThanhVien BinarySearchTheoTen(string ten)
         {
-            // Đảm bảo danh sách được sắp xếp theo tên trước
             BubbleSortTheoTen();
 
             int left = 0, right = dsThanhVien.Count - 1;
@@ -253,7 +250,7 @@ namespace Nhom17_QuanLyThuVien
                 }
             }
                 int soMoi = somax + 1;
-                string maMoi = soMoi.ToString("D3"); // có nghía là thêm có 3 số nếu là 1 thì thêm 001 
+                string maMoi = soMoi.ToString("D3");
                 return "TV" + maMoi;
 
         }

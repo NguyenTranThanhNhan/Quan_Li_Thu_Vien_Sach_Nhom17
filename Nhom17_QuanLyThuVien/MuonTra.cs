@@ -79,8 +79,6 @@ namespace Nhom17_QuanLyThuVien
             get { return this.trangThai; }
             set { this.trangThai = value; }
         }
-
-        // Danh sách các chi tiết mượn
         public List<ChiTietSachMuon> DanhSachChiTiet
         {
             get { return this.danhSachChiTiet; }

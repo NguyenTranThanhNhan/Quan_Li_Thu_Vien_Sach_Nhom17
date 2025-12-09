@@ -19,6 +19,7 @@ namespace Nhom17_QuanLyThuVien
         }
         private XuLyThanhVien xlThanhVien = XuLyThanhVien.Instance;
         private int vitri = -1;
+        private bool isExit = false;
 
         private void GiaoDienQLThanhVien_Load(object sender, EventArgs e)
         {
@@ -44,6 +45,7 @@ namespace Nhom17_QuanLyThuVien
             DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
+                isExit = true;
                 this.Close();
                 new MainThuVien().Show();
             }
@@ -246,25 +248,18 @@ namespace Nhom17_QuanLyThuVien
 
         }
 
-
-
-
-
-
-
-        //private void btnMuon_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult kq = MessageBox.Show("Bạn có muốn mượn sách !?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        //    if (kq == DialogResult.Yes)
-        //    {
-        //       string maTV = MaTV.Text;
-        //        string sdt =SDTTV.Text;
-
-        //        PhieuMuon pm = new PhieuMuon(maTV,sdt);
-        //        pm.Show();
-        //        this.Hide();
-
-        //    }
-        //}
+        private void GiaoDienQLThanhVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isExit) return;
+            DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                new MainThuVien().Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+    }
     }
 }

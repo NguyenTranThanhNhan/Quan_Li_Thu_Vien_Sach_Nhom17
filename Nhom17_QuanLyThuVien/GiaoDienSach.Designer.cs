@@ -80,11 +80,10 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
+            this.groupBox4.BackColor = System.Drawing.Color.Ivory;
             this.groupBox4.Controls.Add(this.DaTaSach);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(3, 282);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(704, 202);
@@ -173,11 +172,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
+            this.groupBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox3.Controls.Add(this.tableLayoutPanel2);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 85);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(704, 191);
@@ -187,7 +185,6 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.10439F));
@@ -225,7 +222,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel2.SetColumnSpan(this.flowLayoutPanel1, 4);
             this.flowLayoutPanel1.Controls.Add(this.btnxoa);
             this.flowLayoutPanel1.Controls.Add(this.btnsua);
@@ -242,7 +239,7 @@
             this.btnxoa.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnxoa.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.images1;
             this.btnxoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnxoa.Location = new System.Drawing.Point(610, 3);
+            this.btnxoa.Location = new System.Drawing.Point(608, 3);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(79, 42);
             this.btnxoa.TabIndex = 28;
@@ -257,7 +254,7 @@
             this.btnsua.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnsua.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.tải_xuống__1_;
             this.btnsua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsua.Location = new System.Drawing.Point(525, 3);
+            this.btnsua.Location = new System.Drawing.Point(523, 3);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(79, 42);
             this.btnsua.TabIndex = 29;
@@ -272,7 +269,7 @@
             this.btnthem.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnthem.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.tải_xuống;
             this.btnthem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnthem.Location = new System.Drawing.Point(440, 3);
+            this.btnthem.Location = new System.Drawing.Point(438, 3);
             this.btnthem.Name = "btnthem";
             this.btnthem.Size = new System.Drawing.Size(79, 42);
             this.btnthem.TabIndex = 27;
@@ -287,6 +284,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(3, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 16);
@@ -299,6 +297,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(3, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 16);
@@ -320,6 +319,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 16);
@@ -350,6 +350,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
             this.label5.Location = new System.Drawing.Point(342, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 16);
@@ -362,6 +363,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Maroon;
             this.label8.Location = new System.Drawing.Point(342, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 16);
@@ -383,6 +385,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(3, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 16);
@@ -424,6 +427,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
             this.label7.Location = new System.Drawing.Point(342, 62);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 16);
@@ -447,6 +451,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
             this.label6.Location = new System.Drawing.Point(342, 91);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 16);
@@ -455,11 +460,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
+            this.groupBox1.BackColor = System.Drawing.Color.Ivory;
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(704, 76);
@@ -469,7 +473,7 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -482,21 +486,21 @@
             this.tableLayoutPanel1.Controls.Add(this.Thoat, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(698, 54);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(698, 55);
             this.tableLayoutPanel1.TabIndex = 25;
             // 
             // txtmatimkiem
             // 
             this.txtmatimkiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtmatimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmatimkiem.Location = new System.Drawing.Point(215, 16);
+            this.txtmatimkiem.Location = new System.Drawing.Point(202, 16);
             this.txtmatimkiem.Name = "txtmatimkiem";
-            this.txtmatimkiem.Size = new System.Drawing.Size(249, 22);
+            this.txtmatimkiem.Size = new System.Drawing.Size(262, 22);
             this.txtmatimkiem.TabIndex = 38;
             // 
             // btntim
@@ -548,9 +552,9 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 19);
+            this.label9.Location = new System.Drawing.Point(3, 20);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(206, 16);
+            this.label9.Size = new System.Drawing.Size(193, 15);
             this.label9.TabIndex = 34;
             this.label9.Text = "Nhập Mã ISBN/Tên Sách cần tìm: ";
             // 
@@ -583,6 +587,7 @@
             this.Name = "GiaoDienSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao Diện  Sách ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GiaoDienSach_FormClosing);
             this.Load += new System.EventHandler(this.GiaoDienSach_Load);
             this.Shown += new System.EventHandler(this.GiaoDienSach_Shown);
             this.groupBox4.ResumeLayout(false);

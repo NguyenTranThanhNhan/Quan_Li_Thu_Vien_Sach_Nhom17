@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -104,11 +104,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
+            this.groupBox1.BackColor = System.Drawing.Color.Ivory;
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(716, 76);
@@ -119,7 +118,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -143,10 +142,10 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 19);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(179, 16);
+            this.label8.Size = new System.Drawing.Size(167, 15);
             this.label8.TabIndex = 47;
             this.label8.Text = "Nhập Mã TV/Tên TV cần tìm:";
             // 
@@ -199,18 +198,17 @@
             // 
             this.txttvtim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txttvtim.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttvtim.Location = new System.Drawing.Point(188, 16);
+            this.txttvtim.Location = new System.Drawing.Point(176, 16);
             this.txttvtim.Name = "txttvtim";
-            this.txttvtim.Size = new System.Drawing.Size(288, 22);
+            this.txttvtim.Size = new System.Drawing.Size(300, 22);
             this.txttvtim.TabIndex = 43;
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
+            this.groupBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox3.Controls.Add(this.tableLayoutPanel2);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 85);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(716, 191);
@@ -260,6 +258,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Ivory;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel2.SetColumnSpan(this.panel1, 4);
             this.panel1.Controls.Add(this.Them);
             this.panel1.Controls.Add(this.Sua);
@@ -276,7 +276,7 @@
             this.Them.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Them.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.tải_xuống;
             this.Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Them.Location = new System.Drawing.Point(468, 5);
+            this.Them.Location = new System.Drawing.Point(466, 4);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(74, 41);
             this.Them.TabIndex = 59;
@@ -291,7 +291,7 @@
             this.Sua.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Sua.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.tải_xuống__1_;
             this.Sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Sua.Location = new System.Drawing.Point(548, 5);
+            this.Sua.Location = new System.Drawing.Point(546, 4);
             this.Sua.Name = "Sua";
             this.Sua.Size = new System.Drawing.Size(73, 41);
             this.Sua.TabIndex = 61;
@@ -306,7 +306,7 @@
             this.Xoa.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Xoa.Image = global::Nhom17_QuanLyThuVien.Properties.Resources.images1;
             this.Xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Xoa.Location = new System.Drawing.Point(627, 5);
+            this.Xoa.Location = new System.Drawing.Point(625, 4);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(73, 41);
             this.Xoa.TabIndex = 60;
@@ -340,6 +340,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label9.Location = new System.Drawing.Point(3, 62);
             this.label9.Name = "label9";
@@ -352,6 +353,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label3.Location = new System.Drawing.Point(3, 93);
             this.label3.Name = "label3";
@@ -383,6 +385,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
             this.label2.Location = new System.Drawing.Point(3, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
@@ -414,6 +417,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
@@ -425,6 +429,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
             this.label5.Location = new System.Drawing.Point(340, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 16);
@@ -445,6 +450,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
             this.label6.Location = new System.Drawing.Point(340, 34);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 16);
@@ -456,6 +462,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(340, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 16);
@@ -478,6 +485,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Maroon;
             this.label7.Location = new System.Drawing.Point(340, 62);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 16);
@@ -520,11 +528,10 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.White;
-            this.groupBox4.BackgroundImage = global::Nhom17_QuanLyThuVien.Properties.Resources.muadong;
+            this.groupBox4.BackColor = System.Drawing.Color.Ivory;
             this.groupBox4.Controls.Add(this.DaTaThanhVien);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(3, 282);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(716, 211);
@@ -586,9 +593,9 @@
             // ns
             // 
             this.ns.DataPropertyName = "NgayThangNamSinh";
-            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.ns.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ns.DefaultCellStyle = dataGridViewCellStyle1;
             this.ns.HeaderText = "Ngày Sinh";
             this.ns.MinimumWidth = 8;
             this.ns.Name = "ns";
@@ -596,8 +603,8 @@
             // ndk
             // 
             this.ndk.DataPropertyName = "NgayDangKy";
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.ndk.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.ndk.DefaultCellStyle = dataGridViewCellStyle2;
             this.ndk.HeaderText = "Ngày Đăng Ký";
             this.ndk.MinimumWidth = 8;
             this.ndk.Name = "ndk";
@@ -627,6 +634,7 @@
             this.Name = "GiaoDienQLThanhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao Diện Quản Lý Thành Viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GiaoDienQLThanhVien_FormClosing);
             this.Load += new System.EventHandler(this.GiaoDienQLThanhVien_Load);
             this.Shown += new System.EventHandler(this.GiaoDienQLThanhVien_Shown);
             this.tblMain.ResumeLayout(false);

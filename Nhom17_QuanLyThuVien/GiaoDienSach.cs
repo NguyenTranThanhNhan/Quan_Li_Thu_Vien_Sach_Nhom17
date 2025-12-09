@@ -16,10 +16,10 @@ namespace Nhom17_QuanLyThuVien
         private XuLySach xlSach = XuLySach.Instance;
         private CXuLyPhieuMuonTra xlMuon = CXuLyPhieuMuonTra.Instance;
         private int vitri = -1;
+        private bool isExit = false;
         public GiaoDienSach()
         {
             InitializeComponent();
-            // NgaySX.MaxDate = DateTime.Today;
         }
 
         private void GiaoDienSach_Load(object sender, EventArgs e)
@@ -29,8 +29,8 @@ namespace Nhom17_QuanLyThuVien
             HienThiDanhSach(xlSach.LayDanhSach());
             if (cbbTheLoai.Items.Count > 0)
             {
-                cbbTheLoai.SelectedIndex = 0; // Chọn mục đầu tiên làm mặc định
-                TaoMaSachTuDong(); // Tạo mã ngay khi Form load
+                cbbTheLoai.SelectedIndex = 0;
+                TaoMaSachTuDong();
             }
 
         }
@@ -38,16 +38,9 @@ namespace Nhom17_QuanLyThuVien
         {
             if (cbbTheLoai.SelectedItem != null)
             {
-                // Lấy Tên Thể loại đã chọn (Ví dụ: "Sách lịch sử")
                 string tenTheLoai = cbbTheLoai.SelectedItem.ToString();
-
-                // Chuyển sang Mã số (Ví dụ: "01")
                 string maTheLoaiSo = xlSach.LayMaSoTheLoai(tenTheLoai);
-
-                // Tạo Mã ISBN-13 hoàn chỉnh có dấu gạch ngang
                 string maSachMoi = xlSach.TaoMaISBNTheoTheLoai(maTheLoaiSo);
-
-                // Cập nhật lên TextBox Mã Sách
                 MaSach.Text = maSachMoi;
             }
         }
@@ -76,6 +69,7 @@ namespace Nhom17_QuanLyThuVien
             DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.Yes)
             {
+                isExit = true;
                 this.Close();
                 new MainThuVien().Show();
             }
@@ -87,9 +81,6 @@ namespace Nhom17_QuanLyThuVien
         private void btnthem_Click(object sender, EventArgs e)
         {
             string maISBNCoGachNgang = MaSach.Text;
-
-            // 1. KIỂM TRA TÍNH HỢP LỆ CỦA ISBN (Check Digit + Cấu trúc 13 số)
-            // KiemTraISBNHopLe sẽ tự xử lý loại bỏ gạch ngang.
             if (!xlSach.KiemTraISBNHopLe(maISBNCoGachNgang))
             {
                 MessageBox.Show("Mã ISBN không hợp lệ! Vui lòng kiểm tra lại cấu trúc mã (978-604-58-XXYY-Z).", "Lỗi ISBN", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -133,19 +124,18 @@ namespace Nhom17_QuanLyThuVien
             {
                 if (pmt.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra)
                 {
-                    // Duyệt qua các chi tiết sách trong phiếu đó
                     foreach (var chiTiet in pmt.DanhSachChiTiet)
                     {
                         if (chiTiet.MaSach == maSach)
                         {
                             coPhieuChuaTra = true;
-                            break; // Đã tìm thấy, thoát khỏi vòng lặp chi tiết
+                            break;
                         }
                     }
                 }
                 if (coPhieuChuaTra)
                 {
-                    break; // Đã tìm thấy phiếu chứa sách chưa trả, thoát khỏi vòng lặp phiếu
+                    break;
                 }
             }
             if (coPhieuChuaTra)
@@ -178,9 +168,6 @@ namespace Nhom17_QuanLyThuVien
                 return;
             }
             string maISBNCoGachNgang = MaSach.Text;
-
-            // 1. KIỂM TRA TÍNH HỢP LỆ CỦA ISBN (Check Digit + Cấu trúc 13 số)
-            // KiemTraISBNHopLe sẽ tự xử lý loại bỏ gạch ngang.
             if (!xlSach.KiemTraISBNHopLe(maISBNCoGachNgang))
             {
                 MessageBox.Show("Mã ISBN không hợp lệ! Vui lòng kiểm tra lại cấu trúc mã (978-604-58-XXYY-Z).", "Lỗi ISBN", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -291,6 +278,20 @@ namespace Nhom17_QuanLyThuVien
         private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaoMaSachTuDong();
+        }
+
+        private void GiaoDienSach_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (isExit) return;
+            DialogResult kq = MessageBox.Show("Bạn muốn Thoát", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.Yes)
+            {
+                new MainThuVien().Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
         
