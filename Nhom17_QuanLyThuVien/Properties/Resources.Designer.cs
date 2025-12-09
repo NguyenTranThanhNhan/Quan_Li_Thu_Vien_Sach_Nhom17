@@ -63,6 +63,36 @@ namespace Nhom17_QuanLyThuVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background1 {
+            get {
+                object obj = ResourceManager.GetObject("background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background2 {
+            get {
+                object obj = ResourceManager.GetObject("background2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -106,6 +136,16 @@ namespace Nhom17_QuanLyThuVien.Properties {
         internal static System.Drawing.Bitmap log_in {
             get {
                 object obj = ResourceManager.GetObject("log-in", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap muadong {
+            get {
+                object obj = ResourceManager.GetObject("muadong", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,16 +246,6 @@ namespace Nhom17_QuanLyThuVien.Properties {
         internal static System.Drawing.Bitmap tải_xuống__4_ {
             get {
                 object obj = ResourceManager.GetObject("tải xuống (4)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tải_xuống__5_ {
-            get {
-                object obj = ResourceManager.GetObject("tải xuống (5)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

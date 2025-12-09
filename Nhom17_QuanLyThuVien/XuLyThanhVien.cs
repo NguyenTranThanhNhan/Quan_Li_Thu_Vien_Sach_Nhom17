@@ -70,7 +70,6 @@ namespace Nhom17_QuanLyThuVien
         {
             if (tim(tv.MaThanhVien))
             {
-                Console.WriteLine("Mã thành viên đã tồn tại, vui lòng nhập lại mã !!");
                 return false;
             }
             else
@@ -117,7 +116,8 @@ namespace Nhom17_QuanLyThuVien
         }
         public bool KiemTraEmail(string email)
         {
-            string p = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            string pattern = @"^[a-zA-Z0-9](\.?[a-zA-Z0-9_+-])*@gmail\.com$";
+            Regex regex = new Regex(pattern);
 
             if (string.IsNullOrWhiteSpace(email))
             {
@@ -125,7 +125,7 @@ namespace Nhom17_QuanLyThuVien
                 return false;
             }
 
-            if (!Regex.IsMatch(email, p))
+            if (!regex.IsMatch(email))
             {
                 MessageBox.Show("Email không đúng định dạng (ví dụ: a@b.com)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -204,6 +204,19 @@ namespace Nhom17_QuanLyThuVien
             }
             return null;
         }
+        public ThanhVien LinearSearchTheoTen(string tenCanTim)
+        {
+            string tuKhoa = tenCanTim.Trim().ToLower();
+
+            foreach (var tv in dsThanhVien)
+            {
+                if (tv.TenThanhVien.Trim().Equals(tenCanTim, StringComparison.OrdinalIgnoreCase))
+                {
+                    return tv;
+                }
+            }
+            return null;
+        }
 
         public List<ThanhVien> LayDanhSachThanhVien()
         {
@@ -240,10 +253,14 @@ namespace Nhom17_QuanLyThuVien
                 }
             }
                 int soMoi = somax + 1;
-                string maMoi = soMoi.ToString("D3");
+                string maMoi = soMoi.ToString("D3"); // có nghía là thêm có 3 số nếu là 1 thì thêm 001 
                 return "TV" + maMoi;
 
         }
-
+        public string TaoMaThanhVienTimeStamp( string manv)
+        {
+            string time = DateTime.Now.ToString("yyyyMMdd");
+            return $"{manv}-{time}";
+        }
     }
   }

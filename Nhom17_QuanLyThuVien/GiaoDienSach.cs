@@ -19,7 +19,7 @@ namespace Nhom17_QuanLyThuVien
         public GiaoDienSach()
         {
             InitializeComponent();
-           // NgaySX.MaxDate = DateTime.Today;
+            // NgaySX.MaxDate = DateTime.Today;
         }
 
         private void GiaoDienSach_Load(object sender, EventArgs e)
@@ -56,10 +56,11 @@ namespace Nhom17_QuanLyThuVien
             xlSach.DocFile();
             xlSach.SelectionSortTheoMa();
             DaTaSach.DataSource = ds;
+            DaTaSach.Enabled = true;
         }
         private void ClearInputFields()
         {
-          
+
             TenSach.Clear();
             TacGia.Clear();
             NhaXB.Clear();
@@ -76,6 +77,7 @@ namespace Nhom17_QuanLyThuVien
             if (kq == DialogResult.Yes)
             {
                 this.Close();
+                new MainThuVien().Show();
             }
         }
         private void GiaoDienSach_Shown(object sender, EventArgs e)
@@ -105,14 +107,14 @@ namespace Nhom17_QuanLyThuVien
                 NgaySX.Focus();
                 return;
             }
-            if(string.IsNullOrWhiteSpace(MaSach.Text) || string.IsNullOrWhiteSpace(TenSach.Text) ||
+            if (string.IsNullOrWhiteSpace(MaSach.Text) || string.IsNullOrWhiteSpace(TenSach.Text) ||
                string.IsNullOrWhiteSpace(TacGia.Text) || string.IsNullOrWhiteSpace(NhaXB.Text) ||
                string.IsNullOrWhiteSpace(cbbTheLoai.Text) || string.IsNullOrWhiteSpace(SoLuong.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin sách!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Sach s = new Sach(maISBNCoGachNgang, TenSach.Text, TacGia.Text, NhaXB.Text, cbbTheLoai.Text, int.Parse(SoLuong.Text), NgaySX.Value.Year,int.Parse(SoLuong.Text));
+            Sach s = new Sach(maISBNCoGachNgang, TenSach.Text, TacGia.Text, NhaXB.Text, cbbTheLoai.Text, int.Parse(SoLuong.Text), NgaySX.Value.Year, int.Parse(SoLuong.Text));
             bool kqthem = xlSach.ThemSach(s);
             if (kqthem == true)
             {
@@ -120,7 +122,7 @@ namespace Nhom17_QuanLyThuVien
                 HienThiDanhSach(xlSach.LayDanhSach());
                 ClearInputFields();
             }
-            
+
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -192,7 +194,7 @@ namespace Nhom17_QuanLyThuVien
             int soLuong = int.Parse(SoLuong.Text);
             int namXB = NgaySX.Value.Year;
             int slconlai = int.Parse(txtslconlai.Text);
-            Sach s = new Sach(maISBNCoGachNgang, tenSach, tacGia, nhaXB, theLoai, soLuong, namXB,slconlai);
+            Sach s = new Sach(maISBNCoGachNgang, tenSach, tacGia, nhaXB, theLoai, soLuong, namXB, slconlai);
             bool kqsua = xlSach.SuaSach(s);
             if (kqsua == true)
             {
@@ -225,38 +227,51 @@ namespace Nhom17_QuanLyThuVien
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
         private void btntim_Click(object sender, EventArgs e)
         {
-            string maCanTim = txtmatimkiem.Text;
+            string maCanTim = txtmatimkiem.Text.Trim();
 
             if (string.IsNullOrEmpty(maCanTim))
             {
-                MessageBox.Show("Vui lòng nhập mã sách cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã sách/tên sách cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Sach kq = xlSach.LinearSearchTheoMa(maCanTim);
-
-            if (kq != null)
+            Sach kqTheoMa = xlSach.LinearSearchTheoMa(maCanTim);
+            Sach kqTheoTen = null;
+            if (kqTheoMa == null)
             {
-                TenSach.Text = kq.TenSach;
-                TacGia.Text = kq.TacGia;
-                NhaXB.Text = kq.NhaXuatBan;
-                cbbTheLoai.Text = kq.TheLoai;
-                SoLuong.Text = kq.SoLuong.ToString();
-                txtslconlai.Text = kq.SoLuongCon.ToString();
-                NgaySX.Value = new DateTime(kq.NamXuatBan, 1, 1);
-                DaTaSach.DataSource = null;
-                DaTaSach.DataSource = new List<Sach> { kq };
+                kqTheoTen = xlSach.BinarySearchTheoTen(maCanTim);
+            }
 
-                MessageBox.Show("Đã tìm thấy sách có mã: " + maCanTim, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Sach sachTimThay = kqTheoMa ?? kqTheoTen;
+
+            if (sachTimThay != null)
+            {
+                cbbTheLoai.SelectedIndexChanged -= cbbTheLoai_SelectedIndexChanged;
+                MaSach.Text = sachTimThay.MaSach;
+                TenSach.Text = sachTimThay.TenSach;
+                TacGia.Text = sachTimThay.TacGia;
+                NhaXB.Text = sachTimThay.NhaXuatBan;
+                cbbTheLoai.Text = sachTimThay.TheLoai;
+                SoLuong.Text = sachTimThay.SoLuong.ToString();
+                txtslconlai.Text = sachTimThay.SoLuongCon.ToString();
+                NgaySX.Value = new DateTime(sachTimThay.NamXuatBan, 1, 1);
+
+                DaTaSach.Enabled = false;
+                DaTaSach.DataSource = new List<Sach> { sachTimThay };
+
+                string loaiTimThay = (kqTheoMa != null) ? "mã" : "tên";
+                MessageBox.Show($"Đã tìm thấy sách theo {loaiTimThay}: {maCanTim}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Không tìm thấy sách có mã: " + maCanTim, "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không tìm thấy sách có mã hoặc tên: " + maCanTim, "Kết quả tìm kiếm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThiDanhSach(xlSach.LayDanhSach());
+
             }
         }
         private void SoLuong_KeyPress(object sender, KeyPressEventArgs e)
@@ -278,4 +293,5 @@ namespace Nhom17_QuanLyThuVien
             TaoMaSachTuDong();
         }
     }
+        
 }

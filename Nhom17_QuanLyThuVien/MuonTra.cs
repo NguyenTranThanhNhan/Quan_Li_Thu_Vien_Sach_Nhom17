@@ -86,5 +86,5 @@ namespace Nhom17_QuanLyThuVien
             get { return this.danhSachChiTiet; }
             set { this.danhSachChiTiet = value; }
         }
-}
+     }
 }

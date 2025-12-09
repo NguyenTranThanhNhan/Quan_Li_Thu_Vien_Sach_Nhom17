@@ -60,12 +60,10 @@ namespace Nhom17_QuanLyThuVien
         public string TaoMaPhieuTuDong()
         {
             int maxNum = 0;
-            string tenphieu = "MP";
-
             // Tìm số lớn nhất trong danh sách hiện tại
             foreach (var p in dsMuonTra)
             {
-                if (p.MaPhieu.StartsWith(tenphieu) && p.MaPhieu.Length > 2)
+                if (p.MaPhieu.StartsWith("MP") && p.MaPhieu.Length > 2)
                 {
                     if (int.TryParse(p.MaPhieu.Substring(2), out int currentNum))
                     {
@@ -75,7 +73,7 @@ namespace Nhom17_QuanLyThuVien
                 }
             }
             // Tạo mã mới
-            return tenphieu + (maxNum + 1).ToString("D3");
+            return "MP" + (maxNum + 1).ToString("D3");
         }
         public bool ThemPhieuMuon(MuonTra phieu)
         {
@@ -114,7 +112,6 @@ namespace Nhom17_QuanLyThuVien
                 // Chỉ hoàn trả những cuốn sách đã được xử lý (trước cuốn bị lỗi)
                 if (chiTiet.MaSach == maSachLoi)
                     break;
-
                 xlSach.TangSoLuong(chiTiet.MaSach, chiTiet.SlMuon);
             }
         }
@@ -237,33 +234,31 @@ namespace Nhom17_QuanLyThuVien
 
             return true;
         }
-        
-        public void SelectionSortTheoMa()
+
+        public void SelectionSortTheoMa(List<HienThiDSMuonTra> dsHienThi)
         {
-            for (int i = 0; i < dsMuonTra.Count - 1; i++)
+            for (int i = 0; i < dsHienThi.Count - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < dsMuonTra.Count; j++)
+                for (int j = i + 1; j < dsHienThi.Count; j++)
                 {
-                    //  StringComparison.OrdinalIgnoreCase : so sánh chuỗi
-                    if (string.Compare(dsMuonTra[j].MaPhieu, dsMuonTra[min].MaPhieu, StringComparison.OrdinalIgnoreCase) < 0)
+                    // So sánh MaPhieu của đối tượng HienThiDSMuonTra
+                    if (string.Compare(dsHienThi[j].MaPhieu, dsHienThi[min].MaPhieu, StringComparison.OrdinalIgnoreCase) < 0)
                         min = j;
                 }
                 if (min != i)
                 {
-                    MuonTra temp = dsMuonTra[i];
-                    dsMuonTra[i] = dsMuonTra[min];
-                    dsMuonTra[min] = temp;
+                    // Hoán đổi
+                    HienThiDSMuonTra temp = dsHienThi[i];
+                    dsHienThi[i] = dsHienThi[min];
+                    dsHienThi[min] = temp;
                 }
             }
-            GhiFile();
         }
         public List<HienThiDSMuonTra> TaoDanhSachHienThi(List<MuonTra> dsPhieuGoc)
         {
             var dsHienThi = new List<HienThiDSMuonTra>();
-
-            // Sắp xếp theo ngày mượn mới nhất
-            foreach (var phieu in dsPhieuGoc.OrderByDescending(p => p.NgayMuon))
+            foreach (var phieu in dsPhieuGoc)
             {
                 foreach (var chiTiet in phieu.DanhSachChiTiet)
                 {
@@ -283,6 +278,7 @@ namespace Nhom17_QuanLyThuVien
                     dsHienThi.Add(item);
                 }
             }
+            SelectionSortTheoMa(dsHienThi);
             return dsHienThi;
         }
 

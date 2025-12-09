@@ -65,6 +65,8 @@ namespace Nhom17_QuanLyThuVien
             dpkNgayTra.Value = DateTime.Today.AddDays(7);
             txttongsl.Text = "0";
             txtgiahan.Text = "0";
+            rbtnMuon.Checked = false;
+            rbtnTra.Checked = false;
             ClearControlsSachDetail();
         }
 
@@ -103,7 +105,7 @@ namespace Nhom17_QuanLyThuVien
             {
                 MessageBox.Show("Mượn sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThiDanhSach(xlMuonTra.LayDSM());
-                ClearInputFields();
+                
             }
         }
 
@@ -239,6 +241,7 @@ namespace Nhom17_QuanLyThuVien
             if (kq == DialogResult.Yes)
             {
                 this.Close();
+                new MainThuVien().Show();
             }
         }
         private void ClearControlsSachDetail()
@@ -397,11 +400,11 @@ namespace Nhom17_QuanLyThuVien
             if (!string.IsNullOrWhiteSpace(maS) && sl > 0)
             {
                 Sach sachChon = xlSach.TimSach(maS);
-
+                
                 if (sachChon != null)
                 {
                     // Sử dụng ChiTietMuon đã thống nhất
-                    ChiTietSachMuon ct = new ChiTietSachMuon(maPhieu, maS, sachChon.TenSach, sl);
+                    ChiTietSachMuon ct = new ChiTietSachMuon(maPhieu, maS, sachChon.TenSach, sachChon.TacGia, sl);
                     chiTietList.Add(ct);
                 }
                 else
@@ -511,6 +514,7 @@ namespace Nhom17_QuanLyThuVien
             if (kq == DialogResult.Yes)
             {
                 this.Close();
+                new MainThuVien().Show();
             }
         }
         private void HienThiDSPhieuChuaTra()
@@ -604,6 +608,7 @@ namespace Nhom17_QuanLyThuVien
             txttongsltra.Text = phieu.TongSoLuongMuon.ToString();
             dtpngaymuon.Value = phieu.NgayMuon;
             dtpngaytra.Value = phieu.NgayTraDuKien;
+            txtslghtra.Text = phieu.SoLanGiaHan.ToString();
             // Đổ thông tin chi tiết 3 cuốn sách lên controls
             FillSachDetailTraSach(phieu.DanhSachChiTiet);
         }
@@ -684,9 +689,88 @@ namespace Nhom17_QuanLyThuVien
             HienThiDSPhieuChuaTra();
         }
 
-        private void DaTaMuonTra_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void btnIn_Click(object sender, EventArgs e)
         {
-            
+            string maPhieuIn = txtmaphieu.Text.Trim();
+            MuonTra phieuIn = xlMuonTra.TimPhieuMuonTraTheoMa(maPhieuIn);
+            if(phieuIn.TrangThai == MuonTra.TrangThaiPhieu.DaTra)
+            {
+                MessageBox.Show("Phiếu mượn đã trả không thể in.", "Lỗi In Ấn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DataTable dtThongTin = new DataTable();
+            dtThongTin.Columns.Add("MaPhieu", typeof(string));
+            dtThongTin.Columns.Add("MaTV", typeof(string));
+            dtThongTin.Columns.Add("TenTV", typeof(string));
+            dtThongTin.Columns.Add("SDT", typeof(string));
+            dtThongTin.Columns.Add("NgayMuon", typeof(DateTime));
+            dtThongTin.Columns.Add("NgayTra", typeof(DateTime));
+            dtThongTin.Columns.Add("SoLuongMuon", typeof(int));
+
+
+
+            DataRow r = dtThongTin.NewRow();
+            r["MaPhieu"] = txtmaphieu.Text;
+            r["MaTV"] = cbbTV.SelectedValue?.ToString() ?? cbbTV.Text.Trim();
+            r["TenTV"] = txttentv.Text;
+            r["SDT"] = txtsdt.Text;
+            r["NgayMuon"] = dpkNgayMuon.Value;
+            r["NgayTra"] = dpkNgayTra.Value;
+            r["SoLuongMuon"] = int.Parse(txttongsl.Text);
+
+
+            dtThongTin.Rows.Add(r);
+
+            // Lấy DataTable danh sách sách từ DataGridView
+
+            DataTable dtDanhSach;
+
+            if (DaTaMuonTra.DataSource is DataTable)
+            {
+                dtDanhSach = ((DataTable)DaTaMuonTra.DataSource).Copy();
+            }
+            else
+            {
+                var bs = DaTaMuonTra.DataSource as BindingSource;
+                if (bs != null && bs.DataSource is DataTable)
+                {
+                    dtDanhSach = ((DataTable)bs.DataSource).Copy();
+                }
+                else
+                {
+                    dtDanhSach = new DataTable();
+                    dtDanhSach.Columns.Add("MaSach", typeof(string));
+                    dtDanhSach.Columns.Add("TenSach", typeof(string));
+                    dtDanhSach.Columns.Add("SoLuong", typeof(int));
+
+                    string maPhieuDangIn = txtmaphieu.Text.Trim();
+                    foreach (DataGridViewRow row in DaTaMuonTra.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        // Lấy Mã Phiếu để lọc
+                        string maPhieuRow = row.Cells[0].Value?.ToString();
+
+                        if (maPhieuRow != maPhieuDangIn)
+                            continue;
+                        var dr = dtDanhSach.NewRow();
+                        dr["MaSach"] = row.Cells[4].Value?.ToString() ?? "";
+                        dr["TenSach"] = row.Cells[5].Value?.ToString() ?? "";
+                        //dr["SoLuong"] = row.Cells[6].Value ?? 0;
+                        int soLuong = 0;
+                        Int32.TryParse(row.Cells[6].Value?.ToString(), out soLuong);
+                        dr["SoLuong"] = soLuong;
+                        dtDanhSach.Rows.Add(dr);
+                    }
+                }
+            }
+
+            // Mở form in
+            PhieuIn frm = new PhieuIn();
+            frm.dtThongTin = dtThongTin;
+            frm.dtDanhSach = dtDanhSach;
+            frm.ShowDialog();
+            ClearInputFields();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Nhom17_QuanLyThuVien
         private void GiaoDienQLThanhVien_Load(object sender, EventArgs e)
         {
             xlThanhVien.DocFile();
-            HienThiDSThanhVien(xlThanhVien.LayDanhSach());
+            HienThiDSThanhVien(xlThanhVien.LayDanhSachSapXepTheoMa());
             MaTV.Text = xlThanhVien.TaoMaThanhVien();
         }
         private void ClearInputFields()
@@ -35,7 +35,8 @@ namespace Nhom17_QuanLyThuVien
             NgaySinh.Value = DateTime.Today;
             NgayDangKy.Value = DateTime.Today;
             CanYeuCau.Clear();
-            
+            Nam.Checked = false;
+            Nu.Checked = false;
             MaTV.Focus();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace Nhom17_QuanLyThuVien
             if (kq == DialogResult.Yes)
             {
                 this.Close();
+                new MainThuVien().Show();
             }
         }
         private void GiaoDienQLThanhVien_Shown(object sender, EventArgs e)
@@ -55,6 +57,7 @@ namespace Nhom17_QuanLyThuVien
         {
             xlThanhVien.SelectionSortTheoMa();
             DaTaThanhVien.DataSource = tv;
+            DaTaThanhVien.Enabled = true;
         }
 
         private void Them_Click(object sender, EventArgs e)
@@ -72,15 +75,15 @@ namespace Nhom17_QuanLyThuVien
             else
                 Phai = "Nữ";
 
-            int tuoi=DateTime.Today.Year-ngaysinh.Year;
-            if(DateTime.Today<ngaysinh.AddYears(tuoi))
+            int tuoi=DateTime.Today.Year - ngaysinh.Year;
+            if(DateTime.Today < ngaysinh.AddYears(tuoi))
             {
                 tuoi--;
             }
 
-            if(tuoi<10)
+            if(tuoi < 16)
             {
-                MessageBox.Show("tuoi khong hop de doc sach ");
+                MessageBox.Show("Để mượn sách thành viên phải từ 16 tuổi trở lên!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
 
@@ -90,9 +93,9 @@ namespace Nhom17_QuanLyThuVien
                 return;
             }
 
-            if (!Regex.IsMatch(sdt, @"^[0-9]{9,11}$"))
+            if (!Regex.IsMatch(sdt, @"^[0-9]{10,11}$"))
             {
-                MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng nhập từ 9 đến 11 chữ số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Số điện thoại phải có từ 10 hoặc 11 chữ số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (!xlThanhVien.KiemTraEmail(email))
@@ -104,11 +107,11 @@ namespace Nhom17_QuanLyThuVien
             if (them == true)
             {
                 MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDSThanhVien(xlThanhVien.DSThanhVien);
+                HienThiDSThanhVien(xlThanhVien.LayDanhSachSapXepTheoMa());
                 ClearInputFields();
             }
             else
-                MessageBox.Show("Thêm không thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm không thành công! Mã thành viên đã được sử dụng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Xoa_Click(object sender, EventArgs e)
@@ -121,7 +124,7 @@ namespace Nhom17_QuanLyThuVien
             {
 
                 MessageBox.Show("Đã xóa thành công !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDSThanhVien(xlThanhVien.DSThanhVien);
+                HienThiDSThanhVien(xlThanhVien.LayDanhSachSapXepTheoMa());
                 ClearInputFields();
             }
             else
@@ -150,7 +153,7 @@ namespace Nhom17_QuanLyThuVien
                 if(kq)
             {
                 MessageBox.Show("Sửa thành công !");
-                HienThiDSThanhVien(xlThanhVien.LayDanhSach());
+                HienThiDSThanhVien(xlThanhVien.LayDanhSachSapXepTheoMa());
                 ClearInputFields();
             }
         }
@@ -161,10 +164,15 @@ namespace Nhom17_QuanLyThuVien
 
             if (string.IsNullOrEmpty(Tim))
             {
-                MessageBox.Show("Vui lòng nhập mã thành viên để tìm kiếm !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập mã thành viên hoặc tên thành viên để tìm kiếm !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            ThanhVien kq = xlThanhVien.LinearSearchTheoMa(Tim);
+            ThanhVien kqtheoma = xlThanhVien.LinearSearchTheoMa(Tim);
+            ThanhVien kqtheoten = null;
+            if (kqtheoma == null) {
+                kqtheoten = xlThanhVien.LinearSearchTheoTen(Tim);
+            }
+            ThanhVien kq = kqtheoma ?? kqtheoten;
 
             if (kq != null)
             {
@@ -174,15 +182,23 @@ namespace Nhom17_QuanLyThuVien
                 txtEmail.Text = kq.Email;
                 NgaySinh.Value = kq.NgayThangNamSinh;
                 NgayDangKy.Value = kq.NgayDangKy;
-                DaTaThanhVien.DataSource = null;
+                if(phai.Equals("Nam"))
+                {
+                    Nam.Checked = true;
+                }
+                else
+                {
+                    Nu.Checked = true;
+                }
+                DaTaThanhVien.Enabled = false;
                 DaTaThanhVien.DataSource = new List<ThanhVien> { kq };
-
-                MessageBox.Show("Đã tìm thấy : " + Tim, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string loaiTimThay = (kqtheoma != null) ? "mã thành viên" : "tên thành viên";
+                MessageBox.Show($"Đã tìm thấy thành viên theo {loaiTimThay}: {Tim}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Không tìm thấy : " + Tim, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDSThanhVien(xlThanhVien.LayDanhSach());
+                MessageBox.Show("Không tìm thấy thành viên có mã hoặc tên : " + Tim, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThiDSThanhVien(xlThanhVien.LayDanhSachSapXepTheoMa());
                 
             }
         }
@@ -209,10 +225,9 @@ namespace Nhom17_QuanLyThuVien
             else
                 Nu.Checked = true;
         }
-
         private void btnquaylai_Click(object sender, EventArgs e)
         {
-             HienThiDSThanhVien(xlThanhVien.LayDanhSach());
+             HienThiDSThanhVien(xlThanhVien.LayDanhSachSapXepTheoMa());
              ClearInputFields();
             
         }
@@ -226,7 +241,16 @@ namespace Nhom17_QuanLyThuVien
             }
         }
 
-       
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
 
         //private void btnMuon_Click(object sender, EventArgs e)
         //{
@@ -235,7 +259,7 @@ namespace Nhom17_QuanLyThuVien
         //    {
         //       string maTV = MaTV.Text;
         //        string sdt =SDTTV.Text;
-               
+
         //        PhieuMuon pm = new PhieuMuon(maTV,sdt);
         //        pm.Show();
         //        this.Hide();
