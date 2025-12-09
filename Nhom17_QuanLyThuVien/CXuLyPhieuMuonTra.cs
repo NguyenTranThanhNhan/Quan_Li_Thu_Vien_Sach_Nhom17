@@ -78,6 +78,13 @@ namespace Nhom17_QuanLyThuVien
         public bool ThemPhieuMuon(MuonTra phieu)
         {
             var xlSach = XuLySach.Instance;
+            bool coPhieuChuaTra = this.dsMuonTra.Any(p => p.MaTV == phieu.MaTV && p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra);
+
+            if (coPhieuChuaTra)
+            {
+                MessageBox.Show("Độc giả này đang có phiếu mượn chưa trả. Vui lòng trả sách cũ trước khi mượn tiếp!", "Lỗi Quy Tắc Mượn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             if (phieu.TongSoLuongMuon < 1 || phieu.TongSoLuongMuon > 3)
             {
                 MessageBox.Show("Tổng số lượng sách mượn phải từ 1 đến 3 quyển!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

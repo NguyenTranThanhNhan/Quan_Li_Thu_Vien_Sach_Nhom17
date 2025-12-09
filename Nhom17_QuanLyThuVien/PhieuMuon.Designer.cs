@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -129,7 +129,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DaTaMuonTra = new System.Windows.Forms.DataGridView();
             this.mmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mtv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -221,7 +220,6 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DaTaMuonTra)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -302,6 +300,7 @@
             this.dgvTraSach.RowTemplate.Height = 24;
             this.dgvTraSach.Size = new System.Drawing.Size(822, 204);
             this.dgvTraSach.TabIndex = 1;
+            this.dgvTraSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTraSach_CellClick);
             // 
             // maphieu
             // 
@@ -1368,9 +1367,9 @@
             // txttimmp
             // 
             this.txttimmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttimmp.Location = new System.Drawing.Point(100, 21);
+            this.txttimmp.Location = new System.Drawing.Point(144, 21);
             this.txttimmp.Name = "txttimmp";
-            this.txttimmp.Size = new System.Drawing.Size(365, 22);
+            this.txttimmp.Size = new System.Drawing.Size(321, 22);
             this.txttimmp.TabIndex = 3;
             // 
             // label2
@@ -1380,9 +1379,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(3, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 15);
+            this.label2.Size = new System.Drawing.Size(135, 15);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nhập mã phiếu:";
+            this.label2.Text = "Nhập mã phiếu/Tên TV:";
             // 
             // groupBox7
             // 
@@ -1403,28 +1402,15 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.DaTaMuonTra, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 388F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(822, 204);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.DaTaMuonTra);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(816, 382);
-            this.groupBox1.TabIndex = 69;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tìm kiếm";
             // 
             // DaTaMuonTra
             // 
@@ -1440,12 +1426,12 @@
             this.nm,
             this.nt});
             this.DaTaMuonTra.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DaTaMuonTra.Location = new System.Drawing.Point(3, 19);
+            this.DaTaMuonTra.Location = new System.Drawing.Point(3, 3);
             this.DaTaMuonTra.Name = "DaTaMuonTra";
             this.DaTaMuonTra.RowHeadersWidth = 51;
             this.DaTaMuonTra.RowTemplate.Height = 24;
-            this.DaTaMuonTra.Size = new System.Drawing.Size(810, 360);
-            this.DaTaMuonTra.TabIndex = 70;
+            this.DaTaMuonTra.Size = new System.Drawing.Size(816, 204);
+            this.DaTaMuonTra.TabIndex = 71;
             this.DaTaMuonTra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DaTaMuonTra_CellClick);
             // 
             // mmt
@@ -1486,8 +1472,8 @@
             // nm
             // 
             this.nm.DataPropertyName = "NgayMuon";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            this.nm.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
+            this.nm.DefaultCellStyle = dataGridViewCellStyle7;
             this.nm.HeaderText = "Ngày Mượn";
             this.nm.MinimumWidth = 8;
             this.nm.Name = "nm";
@@ -1495,8 +1481,8 @@
             // nt
             // 
             this.nt.DataPropertyName = "NgayTraDuKien";
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            this.nt.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Format = "dd/MM/yyyy";
+            this.nt.DefaultCellStyle = dataGridViewCellStyle8;
             this.nt.HeaderText = "Ngày Trả";
             this.nt.MinimumWidth = 8;
             this.nt.Name = "nt";
@@ -2251,7 +2237,6 @@
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DaTaMuonTra)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -2293,15 +2278,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView DaTaMuonTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mmt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mtv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ms;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tensach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nt;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -2446,5 +2422,13 @@
         private System.Windows.Forms.TextBox txtTenSach3tra;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTraSach;
+        private System.Windows.Forms.DataGridView DaTaMuonTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mmt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ms;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tensach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nt;
     }
 }

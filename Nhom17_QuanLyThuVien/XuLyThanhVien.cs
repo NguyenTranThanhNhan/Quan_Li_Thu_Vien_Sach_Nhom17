@@ -214,7 +214,15 @@ namespace Nhom17_QuanLyThuVien
             }
             return null;
         }
-
+        public string TimMaTheoTen(string ten)
+        {
+            foreach (ThanhVien tv in dsThanhVien)
+            {
+                if (tv.TenThanhVien.Equals(ten, StringComparison.OrdinalIgnoreCase))
+                    return tv.MaThanhVien;
+            }
+            return null;
+        }
         public List<ThanhVien> LayDanhSachThanhVien()
         {
             return dsThanhVien;

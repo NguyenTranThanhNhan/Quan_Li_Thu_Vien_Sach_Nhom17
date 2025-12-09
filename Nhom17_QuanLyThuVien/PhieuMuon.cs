@@ -153,13 +153,13 @@ namespace Nhom17_QuanLyThuVien
 
         private void Tim_Click(object sender, EventArgs e)
         {
-            string maPhieuCanTim = txttimmp.Text.Trim();
-            if (string.IsNullOrEmpty(maPhieuCanTim))
+            string giatriCanTim = txttimmp.Text.Trim();
+            if (string.IsNullOrEmpty(giatriCanTim))
             {
-                MessageBox.Show("Vui lòng nhập Mã Phiếu cần tìm vào ô tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập thông tin cần tìm vào ô tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            MuonTra phieuGoc = xlMuonTra.TimPhieuMuonTraTheoMa(maPhieuCanTim);
+            MuonTra phieuGoc = xlMuonTra.TimPhieuMuonTraTheoMa(giatriCanTim);
             if (phieuGoc != null)
             {
                 LoadPhieuDetails(phieuGoc);
@@ -167,13 +167,32 @@ namespace Nhom17_QuanLyThuVien
                 List<HienThiDSMuonTra> dsHienThi = xlMuonTra.TaoDanhSachHienThi(dsPhieuTimDuoc);
                 HienThiDanhSach(dsPhieuTimDuoc);
                 txttimmp.Clear();
+                return;
             }
-            else
+            string matv= xlThanhVien.TimMaTheoTen(giatriCanTim);
+            if (!string.IsNullOrEmpty(matv))
             {
-                MessageBox.Show($"Không tìm thấy phiếu mượn có mã: {maPhieuCanTim}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearInputFields();
-                HienThiDanhSach(xlMuonTra.LayDSM());
+
+                var dsPhieuChuaTra = xlMuonTra.LayDSM().Where(p => p.MaTV == matv && p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra).ToList();
+
+                if (dsPhieuChuaTra.Any())
+                {
+                    HienThiDanhSach(dsPhieuChuaTra);
+                    ClearInputFields();
+                    MessageBox.Show($"Danh sách các cuốn sách {giatriCanTim} đang mượn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"Thành viên {giatriCanTim} không có cuốn sách nào đang mượn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThiDanhSach(new List<MuonTra>());
+                }
+                return;
             }
+
+            MessageBox.Show($"Không tìm thấy phiếu mượn có mã: {giatriCanTim} hoặc thành viên có tên tương ứng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearInputFields();
+            HienThiDanhSach(xlMuonTra.LayDSM());
+
         }
         private void LoadPhieuDetails(MuonTra phieu)
         {

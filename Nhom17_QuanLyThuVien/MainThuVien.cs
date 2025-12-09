@@ -35,6 +35,8 @@ namespace Nhom17_QuanLyThuVien
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) != DialogResult.Yes)
                     e.Cancel = true;
+                else
+                    Application.Exit();
             }
         }
 
