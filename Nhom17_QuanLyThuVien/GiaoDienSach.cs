@@ -81,6 +81,12 @@ namespace Nhom17_QuanLyThuVien
         private void btnthem_Click(object sender, EventArgs e)
         {
             string maISBNCoGachNgang = MaSach.Text;
+            if (string.IsNullOrWhiteSpace(MaSach.Text) || string.IsNullOrWhiteSpace(TenSach.Text) ||string.IsNullOrWhiteSpace(TacGia.Text) || string.IsNullOrWhiteSpace(NhaXB.Text) ||
+                string.IsNullOrWhiteSpace(cbbTheLoai.Text) || string.IsNullOrWhiteSpace(SoLuong.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin sách!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!xlSach.KiemTraISBNHopLe(maISBNCoGachNgang))
             {
                 MessageBox.Show("Mã ISBN không hợp lệ! Vui lòng kiểm tra lại cấu trúc mã (978-604-58-XXYY-Z).", "Lỗi ISBN", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -92,19 +98,13 @@ namespace Nhom17_QuanLyThuVien
                 SoLuong.Focus();
                 return;
             }
-            if (NgaySX.Value.Year > DateTime.Now.Year)
+            if (NgaySX.Value.Date > DateTime.Now.Date)
             {
-                MessageBox.Show("Năm xuất bản không được lớn hơn năm hiện tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ngày xuất bản không được lớn hơn ngày hiện tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 NgaySX.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(MaSach.Text) || string.IsNullOrWhiteSpace(TenSach.Text) ||
-               string.IsNullOrWhiteSpace(TacGia.Text) || string.IsNullOrWhiteSpace(NhaXB.Text) ||
-               string.IsNullOrWhiteSpace(cbbTheLoai.Text) || string.IsNullOrWhiteSpace(SoLuong.Text))
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin sách!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+           
             Sach s = new Sach(maISBNCoGachNgang, TenSach.Text, TacGia.Text, NhaXB.Text, cbbTheLoai.Text, int.Parse(SoLuong.Text), NgaySX.Value.Year, int.Parse(SoLuong.Text));
             bool kqthem = xlSach.ThemSach(s);
             if (kqthem == true)
@@ -191,7 +191,7 @@ namespace Nhom17_QuanLyThuVien
             }
             else
             {
-                MessageBox.Show("Sửa sách thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sửa sách thất bại! Vui lòng kiểm tra lại mã sách", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

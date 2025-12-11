@@ -29,27 +29,19 @@ namespace Nhom17_QuanLyThuVien
         }
         public static bool DocDuLieu<T>(string filename, out T duLieu) where T : new()
         {
-            
             duLieu = new T();
-
-            
             if (!File.Exists(filename))
             {
                 Console.WriteLine($"File dữ liệu '{filename}' chưa tồn tại, tạo đối tượng mới.");
-                
                 return false;
             }
-
             try
             {
                 using (FileStream fs = new FileStream(filename, FileMode.Open))
                 {
                     BinaryFormatter bf = new BinaryFormatter();
-
-                    
                     duLieu = (T)bf.Deserialize(fs);
                 }
-                
                 return true;
             }
             catch (Exception err)

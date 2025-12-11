@@ -17,10 +17,16 @@ namespace Nhom17_QuanLyThuVien
         private DateTime NgayDK;
         private string can;
         private string phai;
-
-
         public ThanhVien() : this("", "", "", "", DateTime.Today, DateTime.Today, "", "")
         {
+            this.maTV = "";
+            this.tenTV = "";
+            this.sdt = "";
+            this.email = "";
+            this.NgaySinh = DateTime.Today;
+            this.NgayDK = DateTime.Today;
+            this.can = "";
+            this.phai = "";
         }
         public ThanhVien(string MaThanhVien, string TenThanhVien, string SDT, string email, DateTime NgayThangNamSinh, DateTime NgayDangKy, string YeuCau, string Phai)
         {

@@ -131,8 +131,6 @@ namespace Nhom17_QuanLyThuVien
             }
             return true;
         }
-
-        // --- Sắp xếp theo mã (ISBN) - Selection Sort ---
         public void SelectionSortTheoMa()
         {
             for (int i = 0; i < dsThanhVien.Count - 1; i++)
@@ -152,8 +150,6 @@ namespace Nhom17_QuanLyThuVien
             }
             GhiFile();
         }
-
-        // --- Sắp xếp theo tên - Bubble Sort ---
         public void BubbleSortTheoTen()
         {
             for (int i = 0; i < dsThanhVien.Count - 1; i++)
@@ -170,7 +166,6 @@ namespace Nhom17_QuanLyThuVien
             }
             GhiFile();
         }
-        // --- Tìm kiếm tuyến tính theo mã  ---
         public ThanhVien LinearSearchTheoMa(string ma)
         {
             foreach (ThanhVien tv in dsThanhVien)
@@ -180,8 +175,6 @@ namespace Nhom17_QuanLyThuVien
             }
             return null;
         }
-
-        // --- Tìm kiếm nhị phân theo tên ---
         public ThanhVien BinarySearchTheoTen(string ten)
         {
             BubbleSortTheoTen();

@@ -50,35 +50,21 @@ namespace Nhom17_QuanLyThuVien
         public List<ThongKe> ThongKeTheoNgay(DateTime? ngayBatDau, DateTime? ngayKetThuc, string loaiDacBiet)
         {
             DateTime today = DateTime.Today.Date;
-            var phieuMuonDaLoc = _danhSachPhieuMuonTra.AsQueryable();
-
-            
+            var phieuMuonDaLoc = _danhSachPhieuMuonTra.AsQueryable();        
             if (loaiDacBiet == "Quá Hạn")
             {
                 phieuMuonDaLoc = phieuMuonDaLoc
-                    .Where(p =>
-                        p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra &&
-                        p.NgayTraDuKien.Date < today
-                    );
+                    .Where(p =>p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra &&p.NgayTraDuKien.Date < today);
             }
             else if (loaiDacBiet == "Đến Hạn Hôm Nay")
             {
                 phieuMuonDaLoc = phieuMuonDaLoc
-                    .Where(p =>
-                        p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra &&
-                        p.NgayTraDuKien.Date == today
-                    );
+                    .Where(p =>p.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra &&p.NgayTraDuKien.Date == today);
             }
             else
             {
-                phieuMuonDaLoc = phieuMuonDaLoc
-                    .Where(p =>
-                        (!ngayBatDau.HasValue || p.NgayMuon.Date >= ngayBatDau.Value.Date) &&
-                        (!ngayKetThuc.HasValue || p.NgayMuon.Date <= ngayKetThuc.Value.Date)
-                    );
+                phieuMuonDaLoc = phieuMuonDaLoc.Where(p =>(!ngayBatDau.HasValue || p.NgayMuon.Date >= ngayBatDau.Value.Date) &&(!ngayKetThuc.HasValue || p.NgayMuon.Date <= ngayKetThuc.Value.Date));
             }
-
-            
             var phieuMuonFinal = phieuMuonDaLoc.ToList();
             var ketQuaThongKe = new List<ThongKe>();
             foreach (var phieu in phieuMuonFinal)
@@ -136,7 +122,6 @@ namespace Nhom17_QuanLyThuVien
                 case "late":
                     loaiDacBiet = "Quá Hạn";
                     break;
-
                 case "đến hạn hôm nay":
                 case "đến hạn":
                     loaiDacBiet = "Đến Hạn Hôm Nay";
@@ -146,31 +131,24 @@ namespace Nhom17_QuanLyThuVien
                     start = today;
                     end = today; 
                     break;
-
                 case "tuần":
                 case "week":
                     int diff = (7 + (today.DayOfWeek - DayOfWeek.Monday)) % 7;
                     start = today.AddDays(-1 * diff);
-
-                   
                     end = start.Value.AddDays(6);
                     break;
-
                 case "tháng":
                 case "month":
                     start = new DateTime(today.Year, today.Month, 1);
                     end = start.Value.AddMonths(1).AddDays(-1);
                     break;
-
                 case "năm":
                 case "year":
                     start = new DateTime(today.Year, 1, 1);
                     end = new DateTime(today.Year, 12, 31);
                     break;
-
                 case "tất cả":
                 default:
-                   
                     start = null;
                     end = null;
                     break;

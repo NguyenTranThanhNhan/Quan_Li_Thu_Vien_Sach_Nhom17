@@ -11,7 +11,6 @@ namespace Nhom17_QuanLyThuVien
     {
         private List<MuonTra> dsMuonTra;
         private static CXuLyPhieuMuonTra _instance;
-        private string filename = "dsMuonTra.dat";
         public List<PhieuMuon> dsPhieuMuon = new List<PhieuMuon>();
         public List<Sach> dsSach;
 
@@ -35,6 +34,7 @@ namespace Nhom17_QuanLyThuVien
             get { return dsMuonTra; }
             set { dsMuonTra = value; }
         }
+        private string filename = "dsMuonTra.dat";
         public void DocFile()
         {
             FileDocGhi.DocDuLieu(filename, out dsMuonTra);
@@ -60,7 +60,6 @@ namespace Nhom17_QuanLyThuVien
         public string TaoMaPhieuTuDong()
         {
             int maxNum = 0;
-            // Tìm số lớn nhất trong danh sách hiện tại
             foreach (var p in dsMuonTra)
             {
                 if (p.MaPhieu.StartsWith("MP") && p.MaPhieu.Length > 2)
@@ -72,7 +71,6 @@ namespace Nhom17_QuanLyThuVien
                     }
                 }
             }
-            // Tạo mã mới
             return "MP" + (maxNum + 1).ToString("D3");
         }
         public bool ThemPhieuMuon(MuonTra phieu)
@@ -113,19 +111,6 @@ namespace Nhom17_QuanLyThuVien
                     break;
                 xlSach.TangSoLuong(chiTiet.MaSach, chiTiet.SlMuon);
             }
-        }
-        public bool SuaPhieuMuonTra(MuonTra mt)
-        {
-            for (int i = 0; i < dsMuonTra.Count; i++)
-            {
-                if (dsMuonTra[i].MaPhieu == mt.MaPhieu)
-                {
-                    dsMuonTra[i] = mt;
-                    GhiFile();
-                    return true;
-                }
-            }
-            return false;
         }
         public bool TraSach(string maPhieu)
         {

@@ -82,19 +82,16 @@ namespace Nhom17_QuanLyThuVien
             {
                 tuoi--;
             }
-
-            if(tuoi < 16)
-            {
-                MessageBox.Show("Để mượn sách thành viên phải từ 16 tuổi trở lên!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                return;
-            }
-
-            if(string.IsNullOrEmpty(maTV) || string.IsNullOrEmpty(tenTV) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(maTV) || string.IsNullOrEmpty(tenTV) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(email))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            if (tuoi < 16)
+            {
+                MessageBox.Show("Để mượn sách thành viên phải từ 16 tuổi trở lên!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+            }
             if (!Regex.IsMatch(sdt, @"^[0-9]{10,11}$"))
             {
                 MessageBox.Show("Số điện thoại phải có từ 10 hoặc 11 chữ số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -130,7 +127,7 @@ namespace Nhom17_QuanLyThuVien
                 ClearInputFields();
             }
             else
-                    MessageBox.Show("Chưa xóa !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa không thành công! Vui lòng nhập mã thành viên để xóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
            
         }
@@ -157,6 +154,9 @@ namespace Nhom17_QuanLyThuVien
                 MessageBox.Show("Sửa thành công !");
                 HienThiDSThanhVien(xlThanhVien.LayDanhSachSapXepTheoMa());
                 ClearInputFields();
+            }else
+                {
+                MessageBox.Show("Sửa không thành công! Vui lòng kiểm tra lại mã thành viên!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

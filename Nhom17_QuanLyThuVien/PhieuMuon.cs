@@ -224,30 +224,25 @@ namespace Nhom17_QuanLyThuVien
                 cbbMaSach1.SelectedIndexChanged += cbbMaSach1_SelectedIndexChanged;
                 num1.Value = chiTiet1.SlMuon;
             }
-
             var chiTiet2 = phieu.DanhSachChiTiet.ElementAtOrDefault(1);
             if (chiTiet2 != null)
             {
                 cbbMaSach2.SelectedIndexChanged -= cbbMaSach2_SelectedIndexChanged;
                 cbbMaSach2.Text = chiTiet2.MaSach;
-                cbbMaSach2_SelectedIndexChanged(cbbMaSach2, EventArgs.Empty);
-                
+                cbbMaSach2_SelectedIndexChanged(cbbMaSach2, EventArgs.Empty);   
                 cbbMaSach2.SelectedIndexChanged += cbbMaSach2_SelectedIndexChanged;
                 num2.Value = chiTiet2.SlMuon;
             }
-
             var chiTiet3 = phieu.DanhSachChiTiet.ElementAtOrDefault(2);
             if (chiTiet3 != null)
             {
                 cbbMaSach3.SelectedIndexChanged -= cbbMaSach3_SelectedIndexChanged;
                 cbbMaSach3.Text = chiTiet3.MaSach;
-                cbbMaSach3_SelectedIndexChanged(cbbMaSach3, EventArgs.Empty);
-                
+                cbbMaSach3_SelectedIndexChanged(cbbMaSach3, EventArgs.Empty);   
                 cbbMaSach3.SelectedIndexChanged += cbbMaSach3_SelectedIndexChanged;
                 num3.Value = chiTiet3.SlMuon;
             }
             bool isChuaTra = (phieu.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra);
-
             Sua.Enabled = isChuaTra;
             btnGiaHan.Enabled = isChuaTra;
         }
@@ -281,11 +276,9 @@ namespace Nhom17_QuanLyThuVien
             cbbMaSach1.SelectedIndexChanged -= cbbMaSach1_SelectedIndexChanged;
             cbbMaSach2.SelectedIndexChanged -= cbbMaSach2_SelectedIndexChanged;
             cbbMaSach3.SelectedIndexChanged -= cbbMaSach3_SelectedIndexChanged;
-
             var ct1 = ds.ElementAtOrDefault(0);
             var ct2 = ds.ElementAtOrDefault(1);
             var ct3 = ds.ElementAtOrDefault(2);
-
             if (ct1 != null)
             {
                 cbbMaSach1.SelectedValue = ct1.MaSach;
@@ -296,7 +289,6 @@ namespace Nhom17_QuanLyThuVien
                 cbbMaSach1.SelectedIndex = -1;
                 num1.Value = 0;
             }
-
             if (ct2 != null)
             {
                 cbbMaSach2.SelectedValue = ct2.MaSach;
@@ -318,11 +310,9 @@ namespace Nhom17_QuanLyThuVien
                 cbbMaSach3.SelectedIndex = -1;
                 num3.Value = 0;
             }
-
             cbbMaSach1.SelectedIndexChanged += cbbMaSach1_SelectedIndexChanged;
             cbbMaSach2.SelectedIndexChanged += cbbMaSach2_SelectedIndexChanged;
             cbbMaSach3.SelectedIndexChanged += cbbMaSach3_SelectedIndexChanged;
-
             cbbMaSach1_SelectedIndexChanged(cbbMaSach1, EventArgs.Empty);
             cbbMaSach2_SelectedIndexChanged(cbbMaSach2, EventArgs.Empty);
             cbbMaSach3_SelectedIndexChanged(cbbMaSach3, EventArgs.Empty);
@@ -332,15 +322,11 @@ namespace Nhom17_QuanLyThuVien
         {
             if (e.RowIndex < 0 || e.RowIndex >= DaTaMuonTra.Rows.Count)
                 return;
-
             var item = DaTaMuonTra.Rows[e.RowIndex].DataBoundItem as HienThiDSMuonTra;
             if (item == null) return;
-
             var phieuGoc = xlMuonTra.TimPhieuMuonTraTheoMa(item.MaPhieu);
             if (phieuGoc == null) return;
-
             txtmaphieu.Text = phieuGoc.MaPhieu;
-
             try
             {
                 cbbTV.SelectedValue = phieuGoc.MaTV;
@@ -349,7 +335,6 @@ namespace Nhom17_QuanLyThuVien
             {
                 cbbTV.Text = phieuGoc.MaTV;
             }
-
             var tv = xlThanhVien.TimTV(phieuGoc.MaTV);
             if (tv != null)
             {
@@ -361,13 +346,10 @@ namespace Nhom17_QuanLyThuVien
                 txttentv.Clear();
                 txtsdt.Clear();
             }
-
             dpkNgayMuon.Value = phieuGoc.NgayMuon;
             dpkNgayTra.Value = phieuGoc.NgayTraDuKien;
-
             txtgiahan.Text = phieuGoc.SoLanGiaHan.ToString();
             txttongsl.Text = phieuGoc.TongSoLuongMuon.ToString();
-
             if (phieuGoc.TrangThai == MuonTra.TrangThaiPhieu.DaTra)
             {
                 rbtnTra.Checked = true;
@@ -378,7 +360,6 @@ namespace Nhom17_QuanLyThuVien
                 rbtnTra.Checked = false;
                 rbtnMuon.Checked = true;
             }
-
             FillSachDetail(phieuGoc.DanhSachChiTiet);
             bool isChuaTra = (phieuGoc.TrangThai == MuonTra.TrangThaiPhieu.ChuaTra);
             Sua.Enabled = isChuaTra;
@@ -417,6 +398,14 @@ namespace Nhom17_QuanLyThuVien
             ClearInputFields();
             btnMuon.Enabled = true;
         }
+        private void cbbTV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbTV.SelectedItem is ThanhVien tv)
+            {
+                txttentv.Text = tv.TenThanhVien;
+                txtsdt.Text = tv.SDT;
+            }
+        }
 
         private void cbbMaSach1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -431,16 +420,6 @@ namespace Nhom17_QuanLyThuVien
                 txtsl1.Clear();
             }
         }
-
-        private void cbbTV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbTV.SelectedItem is ThanhVien tv)
-            {
-                txttentv.Text = tv.TenThanhVien;
-                txtsdt.Text = tv.SDT;
-            }
-        }
-
         private void cbbMaSach2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbMaSach2.SelectedItem is Sach sach)
@@ -688,9 +667,6 @@ namespace Nhom17_QuanLyThuVien
             dtThongTin.Columns.Add("NgayMuon", typeof(DateTime));
             dtThongTin.Columns.Add("NgayTra", typeof(DateTime));
             dtThongTin.Columns.Add("SoLuongMuon", typeof(int));
-
-
-
             DataRow r = dtThongTin.NewRow();
             r["MaPhieu"] = txtmaphieu.Text;
             r["MaTV"] = cbbTV.SelectedValue?.ToString() ?? cbbTV.Text.Trim();
@@ -699,12 +675,8 @@ namespace Nhom17_QuanLyThuVien
             r["NgayMuon"] = dpkNgayMuon.Value;
             r["NgayTra"] = dpkNgayTra.Value;
             r["SoLuongMuon"] = int.Parse(txttongsl.Text);
-
-
             dtThongTin.Rows.Add(r);
-
             DataTable dtDanhSach;
-
             if (DaTaMuonTra.DataSource is DataTable)
             {
                 dtDanhSach = ((DataTable)DaTaMuonTra.DataSource).Copy();
@@ -722,7 +694,6 @@ namespace Nhom17_QuanLyThuVien
                     dtDanhSach.Columns.Add("MaSach", typeof(string));
                     dtDanhSach.Columns.Add("TenSach", typeof(string));
                     dtDanhSach.Columns.Add("SoLuong", typeof(int));
-
                     string maPhieuDangIn = txtmaphieu.Text.Trim();
                     foreach (DataGridViewRow row in DaTaMuonTra.Rows)
                     {

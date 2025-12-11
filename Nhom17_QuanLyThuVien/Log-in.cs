@@ -16,26 +16,21 @@ namespace Nhom17_QuanLyThuVien
         {
             InitializeComponent();
         }
-
         private void Log_in_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtUser;
         }
- 
         bool CheckLogin( string userName , string passWord)
         {
             for(int i = 0;i < ListUser.Instance.ListAccountUser.Count; i++)
             {
                 if(userName ==ListUser.Instance.ListAccountUser[i].UserName && passWord == ListUser.Instance.ListAccountUser[i].Password)
                 {
-                   
                     return true;
                 }
-                    
             }
             return false;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             string name = txtUser.Text;
@@ -75,7 +70,6 @@ namespace Nhom17_QuanLyThuVien
                 this.Close();
             }
         }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (ckcHienThiMatKhau.Checked)

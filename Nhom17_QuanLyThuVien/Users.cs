@@ -10,13 +10,8 @@ namespace Nhom17_QuanLyThuVien
     {
         private string userName;
         private string password;
-       
-
         public string UserName { get => userName; set => userName=value; }
         public string Password { get => password; set => password=value; }
-       
-       
-
         public Users(string name, string pass) {
             this.UserName = name;
             this.Password = pass;

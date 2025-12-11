@@ -29,11 +29,7 @@ namespace Nhom17_QuanLyThuVien
         {
             if (isExit)
             {
-                if (MessageBox.Show(
-                "Bạn có chắc chắn thoát không ?",
-                "Confirm",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) != DialogResult.Yes)
+                if (MessageBox.Show("Bạn có chắc chắn thoát không ?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) != DialogResult.Yes)
                     e.Cancel = true;
                 else
                     Application.Exit();

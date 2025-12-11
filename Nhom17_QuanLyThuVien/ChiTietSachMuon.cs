@@ -15,16 +15,13 @@ namespace Nhom17_QuanLyThuVien
         private string maSach;
         private string tenSach;
         private string tacGia;
-        
         private int slMuon;
         public ChiTietSachMuon() { 
             this.maPhieu = null;
             this.maSach = null;
             this.tenSach = null;
             this.TacGia = null;
-            
             this.slMuon = 0;
-            
         }
         public ChiTietSachMuon(string maPhieu, string maSach, string tenSach, string tacgia, int slMuon)
         {
@@ -32,9 +29,7 @@ namespace Nhom17_QuanLyThuVien
             this.maSach = maSach;
             this.tenSach = tenSach;
             this.tacGia = tacgia;
-            
             this.slMuon = slMuon;
-           
         }
         public string MaPhieu { 
             get{ return this.maPhieu; }
@@ -54,9 +49,7 @@ namespace Nhom17_QuanLyThuVien
         {
             get { return this.tacGia; }
             set { this.tacGia = value; }
-        }
-
-        
+        }  
         public int SlMuon
         {
             get { return this.slMuon; }

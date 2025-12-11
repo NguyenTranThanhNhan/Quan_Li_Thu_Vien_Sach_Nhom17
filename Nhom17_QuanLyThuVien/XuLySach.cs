@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Policy;
+using System.Windows.Forms;
 namespace Nhom17_QuanLyThuVien
 {
     public class XuLySach
@@ -89,7 +90,7 @@ namespace Nhom17_QuanLyThuVien
         {
             if (kttrungma(s.MaSach))
             {
-                Console.WriteLine("Mã sách đã tồn tại, không thể thêm.");
+                MessageBox.Show("Mã sách đã tồn tại. Vui lòng nhập mã sách khác.", "Lỗi trùng mã sách", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else
@@ -153,8 +154,6 @@ namespace Nhom17_QuanLyThuVien
             }
             GhiFile();
         }
-
-        // --- Sắp xếp theo tên sách - Bubble Sort ---
         public void BubbleSortTheoTen()
         {
             for (int i = 0; i < dsSach.Count - 1; i++)
@@ -171,7 +170,6 @@ namespace Nhom17_QuanLyThuVien
             }
             GhiFile();
         }
-        // --- Tìm kiếm tuyến tính theo mã sách ---
         public Sach LinearSearchTheoMa(string ma)
         {
             foreach (Sach s in dsSach)
@@ -181,8 +179,6 @@ namespace Nhom17_QuanLyThuVien
             }
             return null;
         }
-
-        // --- Tìm kiếm nhị phân theo tên sách ---
         public Sach BinarySearchTheoTen(string ten)
         {
             BubbleSortTheoTen();

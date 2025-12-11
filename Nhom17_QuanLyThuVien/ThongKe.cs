@@ -40,7 +40,6 @@ namespace Nhom17_QuanLyThuVien
             this.soluongMuon = soluongMuon;
             this.trangThai = trangThai;
         }
-
         public string MaPhieu { get => maPhieu; set => maPhieu=value; }
         public DateTime NgayMuon { get => ngayMuon; set => ngayMuon=value; }
         public DateTime NgayTra { get => ngayTra; set => ngayTra=value; }
@@ -50,7 +49,6 @@ namespace Nhom17_QuanLyThuVien
         public string TacGia { get => tacGia; set => tacGia=value; }
         public string SoluongMuon { get => soluongMuon; set => soluongMuon=value; }
         public TrangThaiPhieu TrangThai { get => trangThai; set => trangThai=value; }
-       
     }
 }
 

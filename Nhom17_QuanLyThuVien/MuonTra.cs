@@ -20,7 +20,6 @@ namespace Nhom17_QuanLyThuVien
         private int soLanGiaHan;
         private TrangThaiPhieu trangThai;
         private List<ChiTietSachMuon> danhSachChiTiet;
-
         public MuonTra()
         {
             this.danhSachChiTiet = new List<ChiTietSachMuon>();
