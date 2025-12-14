@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -453,6 +453,7 @@
             this.txtMaSach2tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaSach2tra.Location = new System.Drawing.Point(69, 12);
             this.txtMaSach2tra.Name = "txtMaSach2tra";
+            this.txtMaSach2tra.ReadOnly = true;
             this.txtMaSach2tra.Size = new System.Drawing.Size(190, 22);
             this.txtMaSach2tra.TabIndex = 71;
             // 
@@ -461,6 +462,7 @@
             this.txtsl2tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsl2tra.Location = new System.Drawing.Point(69, 107);
             this.txtsl2tra.Name = "txtsl2tra";
+            this.txtsl2tra.ReadOnly = true;
             this.txtsl2tra.Size = new System.Drawing.Size(190, 22);
             this.txtsl2tra.TabIndex = 70;
             // 
@@ -543,6 +545,7 @@
             this.txtMaSach3tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaSach3tra.Location = new System.Drawing.Point(69, 12);
             this.txtMaSach3tra.Name = "txtMaSach3tra";
+            this.txtMaSach3tra.ReadOnly = true;
             this.txtMaSach3tra.Size = new System.Drawing.Size(190, 22);
             this.txtMaSach3tra.TabIndex = 72;
             // 
@@ -551,6 +554,7 @@
             this.txtsl3tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsl3tra.Location = new System.Drawing.Point(69, 107);
             this.txtsl3tra.Name = "txtsl3tra";
+            this.txtsl3tra.ReadOnly = true;
             this.txtsl3tra.Size = new System.Drawing.Size(190, 22);
             this.txtsl3tra.TabIndex = 71;
             // 
@@ -559,6 +563,7 @@
             this.txtTenSach3tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenSach3tra.Location = new System.Drawing.Point(69, 59);
             this.txtTenSach3tra.Name = "txtTenSach3tra";
+            this.txtTenSach3tra.ReadOnly = true;
             this.txtTenSach3tra.Size = new System.Drawing.Size(190, 22);
             this.txtTenSach3tra.TabIndex = 68;
             // 
@@ -633,6 +638,7 @@
             this.txtMaSach1tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaSach1tra.Location = new System.Drawing.Point(69, 12);
             this.txtMaSach1tra.Name = "txtMaSach1tra";
+            this.txtMaSach1tra.ReadOnly = true;
             this.txtMaSach1tra.Size = new System.Drawing.Size(190, 22);
             this.txtMaSach1tra.TabIndex = 70;
             // 
@@ -641,6 +647,7 @@
             this.txtTenSach1tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenSach1tra.Location = new System.Drawing.Point(69, 59);
             this.txtTenSach1tra.Name = "txtTenSach1tra";
+            this.txtTenSach1tra.ReadOnly = true;
             this.txtTenSach1tra.Size = new System.Drawing.Size(190, 22);
             this.txtTenSach1tra.TabIndex = 66;
             // 
@@ -649,6 +656,7 @@
             this.txtsl1tra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsl1tra.Location = new System.Drawing.Point(69, 107);
             this.txtsl1tra.Name = "txtsl1tra";
+            this.txtsl1tra.ReadOnly = true;
             this.txtsl1tra.Size = new System.Drawing.Size(190, 22);
             this.txtsl1tra.TabIndex = 69;
             // 
@@ -1057,6 +1065,7 @@
             this.txtslghtra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtslghtra.Location = new System.Drawing.Point(403, 164);
             this.txtslghtra.Name = "txtslghtra";
+            this.txtslghtra.ReadOnly = true;
             this.txtslghtra.Size = new System.Drawing.Size(205, 22);
             this.txtslghtra.TabIndex = 112;
             // 
@@ -1065,6 +1074,7 @@
             this.txtmatvtra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtmatvtra.Location = new System.Drawing.Point(101, 14);
             this.txtmatvtra.Name = "txtmatvtra";
+            this.txtmatvtra.ReadOnly = true;
             this.txtmatvtra.Size = new System.Drawing.Size(205, 22);
             this.txtmatvtra.TabIndex = 99;
             // 
@@ -1085,6 +1095,7 @@
             this.txtmpt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtmpt.Location = new System.Drawing.Point(403, 14);
             this.txtmpt.Name = "txtmpt";
+            this.txtmpt.ReadOnly = true;
             this.txtmpt.Size = new System.Drawing.Size(205, 22);
             this.txtmpt.TabIndex = 101;
             // 
@@ -1139,6 +1150,7 @@
             this.txttentvtra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txttentvtra.Location = new System.Drawing.Point(101, 64);
             this.txttentvtra.Name = "txttentvtra";
+            this.txttentvtra.ReadOnly = true;
             this.txttentvtra.Size = new System.Drawing.Size(205, 22);
             this.txttentvtra.TabIndex = 102;
             // 
@@ -1169,6 +1181,7 @@
             this.txtsdttra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsdttra.Location = new System.Drawing.Point(101, 114);
             this.txtsdttra.Name = "txtsdttra";
+            this.txtsdttra.ReadOnly = true;
             this.txtsdttra.Size = new System.Drawing.Size(205, 22);
             this.txtsdttra.TabIndex = 106;
             // 
@@ -1189,6 +1202,7 @@
             this.txttongsltra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txttongsltra.Location = new System.Drawing.Point(101, 164);
             this.txttongsltra.Name = "txttongsltra";
+            this.txttongsltra.ReadOnly = true;
             this.txttongsltra.Size = new System.Drawing.Size(205, 22);
             this.txttongsltra.TabIndex = 111;
             // 
@@ -1472,8 +1486,8 @@
             // nm
             // 
             this.nm.DataPropertyName = "NgayMuon";
-            dataGridViewCellStyle7.Format = "dd/MM/yyyy";
-            this.nm.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.nm.DefaultCellStyle = dataGridViewCellStyle1;
             this.nm.HeaderText = "Ngày Mượn";
             this.nm.MinimumWidth = 8;
             this.nm.Name = "nm";
@@ -1481,8 +1495,8 @@
             // nt
             // 
             this.nt.DataPropertyName = "NgayTraDuKien";
-            dataGridViewCellStyle8.Format = "dd/MM/yyyy";
-            this.nt.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.nt.DefaultCellStyle = dataGridViewCellStyle2;
             this.nt.HeaderText = "Ngày Trả";
             this.nt.MinimumWidth = 8;
             this.nt.Name = "nt";
@@ -1591,6 +1605,7 @@
             this.txtsl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsl2.Location = new System.Drawing.Point(69, 96);
             this.txtsl2.Name = "txtsl2";
+            this.txtsl2.ReadOnly = true;
             this.txtsl2.Size = new System.Drawing.Size(190, 22);
             this.txtsl2.TabIndex = 61;
             // 
@@ -1609,6 +1624,7 @@
             this.txtten2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtten2.Location = new System.Drawing.Point(69, 53);
             this.txtten2.Name = "txtten2";
+            this.txtten2.ReadOnly = true;
             this.txtten2.Size = new System.Drawing.Size(190, 22);
             this.txtten2.TabIndex = 59;
             // 
@@ -1695,6 +1711,7 @@
             this.txtten3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtten3.Location = new System.Drawing.Point(69, 53);
             this.txtten3.Name = "txtten3";
+            this.txtten3.ReadOnly = true;
             this.txtten3.Size = new System.Drawing.Size(190, 22);
             this.txtten3.TabIndex = 60;
             // 
@@ -1742,6 +1759,7 @@
             this.txtsl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsl3.Location = new System.Drawing.Point(69, 96);
             this.txtsl3.Name = "txtsl3";
+            this.txtsl3.ReadOnly = true;
             this.txtsl3.Size = new System.Drawing.Size(190, 22);
             this.txtsl3.TabIndex = 64;
             // 
@@ -1798,6 +1816,7 @@
             this.txtsl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsl1.Location = new System.Drawing.Point(69, 96);
             this.txtsl1.Name = "txtsl1";
+            this.txtsl1.ReadOnly = true;
             this.txtsl1.Size = new System.Drawing.Size(190, 22);
             this.txtsl1.TabIndex = 65;
             // 
@@ -1835,6 +1854,7 @@
             this.txtten1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtten1.Location = new System.Drawing.Point(69, 53);
             this.txtten1.Name = "txtten1";
+            this.txtten1.ReadOnly = true;
             this.txtten1.Size = new System.Drawing.Size(190, 22);
             this.txtten1.TabIndex = 59;
             // 
@@ -1925,6 +1945,7 @@
             this.txtsdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtsdt.Location = new System.Drawing.Point(101, 94);
             this.txtsdt.Name = "txtsdt";
+            this.txtsdt.ReadOnly = true;
             this.txtsdt.Size = new System.Drawing.Size(205, 22);
             this.txtsdt.TabIndex = 88;
             // 
@@ -1955,6 +1976,7 @@
             this.txtmaphieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtmaphieu.Location = new System.Drawing.Point(403, 10);
             this.txtmaphieu.Name = "txtmaphieu";
+            this.txtmaphieu.ReadOnly = true;
             this.txtmaphieu.Size = new System.Drawing.Size(205, 22);
             this.txtmaphieu.TabIndex = 83;
             // 
@@ -1999,6 +2021,7 @@
             this.txttentv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txttentv.Location = new System.Drawing.Point(101, 52);
             this.txttentv.Name = "txttentv";
+            this.txttentv.ReadOnly = true;
             this.txttentv.Size = new System.Drawing.Size(205, 22);
             this.txttentv.TabIndex = 84;
             // 
@@ -2029,6 +2052,7 @@
             this.txtgiahan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtgiahan.Location = new System.Drawing.Point(403, 136);
             this.txtgiahan.Name = "txtgiahan";
+            this.txtgiahan.ReadOnly = true;
             this.txtgiahan.Size = new System.Drawing.Size(205, 22);
             this.txtgiahan.TabIndex = 94;
             // 
@@ -2061,6 +2085,7 @@
             this.txttongsl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txttongsl.Location = new System.Drawing.Point(101, 136);
             this.txttongsl.Name = "txttongsl";
+            this.txttongsl.ReadOnly = true;
             this.txttongsl.Size = new System.Drawing.Size(205, 22);
             this.txttongsl.TabIndex = 93;
             // 

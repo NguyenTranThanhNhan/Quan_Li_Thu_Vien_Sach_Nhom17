@@ -332,6 +332,7 @@
             this.MaSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaSach.Location = new System.Drawing.Point(102, 3);
             this.MaSach.Name = "MaSach";
+            this.MaSach.ReadOnly = true;
             this.MaSach.Size = new System.Drawing.Size(234, 22);
             this.MaSach.TabIndex = 38;
             // 
@@ -418,6 +419,7 @@
             this.txtslconlai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtslconlai.Location = new System.Drawing.Point(462, 59);
             this.txtslconlai.Name = "txtslconlai";
+            this.txtslconlai.ReadOnly = true;
             this.txtslconlai.Size = new System.Drawing.Size(233, 22);
             this.txtslconlai.TabIndex = 52;
             // 
