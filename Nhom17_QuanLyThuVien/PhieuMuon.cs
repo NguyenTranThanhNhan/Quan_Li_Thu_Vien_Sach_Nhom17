@@ -67,6 +67,7 @@ namespace Nhom17_QuanLyThuVien
             txtgiahan.Text = "0";
             rbtnMuon.Checked = false;
             rbtnTra.Checked = false;
+            txttimmp.Clear();
             ClearControlsSachDetail();
         }
 

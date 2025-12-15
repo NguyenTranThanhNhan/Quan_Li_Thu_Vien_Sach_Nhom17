@@ -17,6 +17,7 @@ namespace Nhom17_QuanLyThuVien
         private CXuLyPhieuMuonTra xlMuon = CXuLyPhieuMuonTra.Instance;
         private int vitri = -1;
         private bool isExit = false;
+        private bool dangSua = false;
         public GiaoDienSach()
         {
             InitializeComponent();
@@ -62,6 +63,7 @@ namespace Nhom17_QuanLyThuVien
             txtslconlai.Clear();
             NgaySX.ResetText();
             MaSach.Focus();
+            txtmatimkiem.Clear();
             TaoMaSachTuDong();
         }
         private void Thoat_Click(object sender, EventArgs e)
@@ -173,6 +175,13 @@ namespace Nhom17_QuanLyThuVien
                 MessageBox.Show("Mã ISBN không hợp lệ! Vui lòng kiểm tra lại cấu trúc mã (978-604-58-XXYY-Z).", "Lỗi ISBN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            Sach sachCu = xlSach.LinearSearchTheoMa(maISBNCoGachNgang);
+            if (sachCu == null)
+            {
+                MessageBox.Show("Không tìm thấy sách để sửa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int soLuongNhapCu = sachCu.SoLuong;
             string maSach = MaSach.Text;
             string tenSach = TenSach.Text;
             string tacGia = TacGia.Text;
@@ -182,16 +191,17 @@ namespace Nhom17_QuanLyThuVien
             int namXB = NgaySX.Value.Year;
             int slconlai = int.Parse(txtslconlai.Text);
             Sach s = new Sach(maISBNCoGachNgang, tenSach, tacGia, nhaXB, theLoai, soLuong, namXB, slconlai);
-            bool kqsua = xlSach.SuaSach(s);
+            bool kqsua = xlSach.SuaSach(s, soLuongNhapCu);
             if (kqsua == true)
             {
+                dangSua = false;
                 MessageBox.Show("Sửa sách thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThiDanhSach(xlSach.LayDanhSach());
                 ClearInputFields();
             }
             else
             {
-                MessageBox.Show("Sửa sách thất bại! Vui lòng kiểm tra lại mã sách", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sửa sách thất bại! Vui lòng kiểm tra lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -201,6 +211,8 @@ namespace Nhom17_QuanLyThuVien
             try
             {
                 vitri = e.RowIndex;
+                if (vitri < 0) return;
+                dangSua = true;
                 Sach s = new Sach();
                 s = xlSach.DSSach[vitri];
                 MaSach.Text = s.MaSach;
@@ -277,6 +289,7 @@ namespace Nhom17_QuanLyThuVien
 
         private void cbbTheLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (dangSua) return;
             TaoMaSachTuDong();
         }
 

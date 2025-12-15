@@ -123,17 +123,34 @@ namespace Nhom17_QuanLyThuVien
             }
             return -1;
         }
-        public bool SuaSach(Sach sachMoi)
+        public bool SuaSach(Sach sachMoi, int soLuongNhapCu)
         {
             int vitri = dsSach.FindIndex(s => s.MaSach == sachMoi.MaSach);
-            if (vitri != -1)
+            if(vitri == -1)
             {
-                dsSach[vitri] = sachMoi;
-                GhiFile();
-                return true;
-            }
-            else
+                MessageBox.Show("Không tìm thấy sách để sửa.", "Lỗi Sửa Sách", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+            Sach sachCuTrongList = dsSach[vitri];
+
+            int soLuongNhapMoi = sachMoi.SoLuong;
+            int chenhLech = soLuongNhapMoi - soLuongNhapCu;
+
+            int soLuongConLaiMoi = sachCuTrongList.SoLuongCon + chenhLech;
+
+            if (soLuongConLaiMoi < 0)
+            {
+                int soSachDangMuon = soLuongNhapCu - sachCuTrongList.SoLuongCon;
+                MessageBox.Show($"Lỗi nghiệp vụ: Số lượng nhập mới ({soLuongNhapMoi}) không thể nhỏ hơn số sách đang được mượn ({soSachDangMuon}).", "Lỗi Sửa Sách", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            sachMoi.SoLuongCon = soLuongConLaiMoi;
+
+            dsSach[vitri] = sachMoi;
+
+            GhiFile();
+            return true;
         }
         public void SelectionSortTheoMa()
         {
