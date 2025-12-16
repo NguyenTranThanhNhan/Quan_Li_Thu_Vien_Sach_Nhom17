@@ -58,7 +58,8 @@ namespace Nhom17_QuanLyThuVien
             TenSach.Clear();
             TacGia.Clear();
             NhaXB.Clear();
-            cbbTheLoai.Text = "";
+            if (cbbTheLoai.Items.Count > 0)
+                cbbTheLoai.SelectedIndex = 0;
             SoLuong.Clear();
             txtslconlai.Clear();
             NgaySX.ResetText();
@@ -251,12 +252,12 @@ namespace Nhom17_QuanLyThuVien
 
             if (sachTimThay != null)
             {
-                cbbTheLoai.SelectedIndexChanged -= cbbTheLoai_SelectedIndexChanged;
+                dangSua = true;
                 MaSach.Text = sachTimThay.MaSach;
                 TenSach.Text = sachTimThay.TenSach;
                 TacGia.Text = sachTimThay.TacGia;
                 NhaXB.Text = sachTimThay.NhaXuatBan;
-                cbbTheLoai.Text = sachTimThay.TheLoai;
+                cbbTheLoai.SelectedItem = sachTimThay.TheLoai;
                 SoLuong.Text = sachTimThay.SoLuong.ToString();
                 txtslconlai.Text = sachTimThay.SoLuongCon.ToString();
                 NgaySX.Value = new DateTime(sachTimThay.NamXuatBan, 1, 1);
