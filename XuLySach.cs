@@ -1,0 +1,302 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Policy;
+using System.Windows.Forms;
+namespace Nhom17_QuanLyThuVien
+{
+    public class XuLySach
+    {
+        private List<Sach> dsSach;
+        private static XuLySach instance;
+        public static XuLySach Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new XuLySach();
+                return instance;
+            }
+        }
+        public XuLySach()
+        {
+            this.dsSach = new List<Sach>();
+        }
+        public XuLySach(List<Sach> dsSach)
+        {
+            this.dsSach = dsSach;
+        }
+        public List<Sach> DSSach
+        {
+            get { return dsSach; }
+            set { dsSach = value; }
+        }
+        private string filename = "dsqlSach.dat";
+        public void DocFile()
+        {
+            FileDocGhi.DocDuLieu(filename, out dsSach);
+        }
+        public void GhiFile()
+        {
+            FileDocGhi.GhiDuLieu(filename, dsSach);
+
+        }
+        public List<Sach> LayDanhSach()
+        {
+            return dsSach;
+        }
+        private bool kttrungma(string maSach)
+        {
+            foreach (Sach s in dsSach)
+            {
+                if (s.MaSach == maSach)
+                    return true;
+            }
+            return false;
+        }
+        public Sach TimSach(string ma)
+        {
+            return dsSach.FirstOrDefault(s => s.MaSach == ma);
+        }
+
+        public bool GiamSoLuong(string ma, int sl)
+        {
+            var sach = TimSach(ma);
+            if (sach != null && sach.SoLuongCon >= sl && sl > 0)
+            {
+                sach.SoLuongCon -= sl;
+                this.GhiFile();
+                return true;
+            }
+            return false;
+        }
+
+        public bool TangSoLuong(string ma, int sl)
+        {
+            var sach = TimSach(ma);
+            if (sach != null && sl > 0)
+            {
+                sach.SoLuongCon += sl;
+                this.GhiFile();
+                return true;
+            }
+            return false;
+        }
+        public bool ThemSach(Sach s)
+        {
+            if (kttrungma(s.MaSach))
+            {
+                MessageBox.Show("Mã sách đã tồn tại. Vui lòng nhập mã sách khác.", "Lỗi trùng mã sách", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                dsSach.Add(s);
+                GhiFile();
+                return true;
+            }
+        }
+        public bool XoaSach(string maSach)
+        {
+            Sach s = LinearSearchTheoMa(maSach);
+            if (s != null)
+            {
+                dsSach.Remove(s);
+                GhiFile();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public int TimViTriTheoMa(string maSach)
+        {
+            for (int i = 0; i < dsSach.Count; i++)
+            {
+                if (dsSach[i].MaSach.Equals(maSach, StringComparison.OrdinalIgnoreCase))
+                    return i;
+            }
+            return -1;
+        }
+        public bool SuaSach(Sach sachMoi, int soLuongNhapCu)
+        {
+            int vitri = dsSach.FindIndex(s => s.MaSach == sachMoi.MaSach);
+            if(vitri == -1)
+            {
+                MessageBox.Show("Không tìm thấy sách để sửa.", "Lỗi Sửa Sách", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            Sach sachCuTrongList = dsSach[vitri];
+
+            int soLuongNhapMoi = sachMoi.SoLuong;
+            int chenhLech = soLuongNhapMoi - soLuongNhapCu;
+
+            int soLuongConLaiMoi = sachCuTrongList.SoLuongCon + chenhLech;
+
+            if (soLuongConLaiMoi < 0)
+            {
+                int soSachDangMuon = soLuongNhapCu - sachCuTrongList.SoLuongCon;
+                MessageBox.Show($"Lỗi nghiệp vụ: Số lượng nhập mới ({soLuongNhapMoi}) không thể nhỏ hơn số sách đang được mượn ({soSachDangMuon}).", "Lỗi Sửa Sách", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            sachMoi.SoLuongCon = soLuongConLaiMoi;
+
+            dsSach[vitri] = sachMoi;
+
+            GhiFile();
+            return true;
+        }
+        public void SelectionSortTheoMa()
+        {
+            for (int i = 0; i < dsSach.Count - 1; i++)
+            {
+                int min = i;
+                for (int j = i + 1; j < dsSach.Count; j++)
+                {
+                    if (string.Compare(dsSach[j].MaSach, dsSach[min].MaSach, StringComparison.OrdinalIgnoreCase) < 0)
+                        min = j;
+                }
+                if (min != i)
+                {
+                    Sach temp = dsSach[i];
+                    dsSach[i] = dsSach[min];
+                    dsSach[min] = temp;
+                }
+            }
+            GhiFile();
+        }
+        public void BubbleSortTheoTen()
+        {
+            for (int i = 0; i < dsSach.Count - 1; i++)
+            {
+                for (int j = 0; j < dsSach.Count - i - 1; j++)
+                {
+                    if (string.Compare(dsSach[j].TenSach, dsSach[j + 1].TenSach, StringComparison.OrdinalIgnoreCase) > 0)
+                    {
+                        Sach temp = dsSach[j];
+                        dsSach[j] = dsSach[j + 1];
+                        dsSach[j + 1] = temp;
+                    }
+                }
+            }
+            GhiFile();
+        }
+        public Sach LinearSearchTheoMa(string ma)
+        {
+            foreach (Sach s in dsSach)
+            {
+                if (s.MaSach.Equals(ma, StringComparison.OrdinalIgnoreCase))
+                    return s;
+            }
+            return null;
+        }
+        public Sach BinarySearchTheoTen(string ten)
+        {
+            BubbleSortTheoTen();
+
+            int left = 0, right = dsSach.Count - 1;
+            while (left <= right)
+            {
+                int mid = (left + right) / 2;
+                int cmp = string.Compare(dsSach[mid].TenSach, ten, StringComparison.OrdinalIgnoreCase);
+
+                if (cmp == 0)
+                    return dsSach[mid];
+                else if (cmp < 0)
+                    left = mid + 1;
+                else
+                    right = mid - 1;
+            }
+            return null;
+        }
+        public List<Sach> LayDanhSachSapXepTheoMa()
+        {
+            SelectionSortTheoMa();
+            return dsSach;
+        }
+
+        public List<Sach> LayDanhSachSapXepTheoTen()
+        {
+            BubbleSortTheoTen();
+            return dsSach;
+        }
+        public string LayMaSoTheLoai(string tenTheLoai)
+        {
+            switch (tenTheLoai)
+            {
+                case "Sách lịch sử": return "01";
+                case "Sách văn học viễn tưởng": return "02";
+                case "Sách văn hóa xã hội": return "03";
+                case "Sách khoa học công nghệ": return "04";
+                case "Sách kỹ năng tư duy": return "05";
+                case "Sách Tiểu Thuyết": return "06";
+                case "Sách kinh doanh": return "07";
+                case "Sách kinh dị": return "08";
+                default: return "99";
+            }
+        }
+        private string TinhCheckDigit(string ma12ChuSo)
+        {
+            if (ma12ChuSo.Length != 12) return "0";
+
+            long sum = 0;
+            for (int i = 0; i < 12; i++)
+            {
+                int digit = ma12ChuSo[i] - '0';
+                sum += (i % 2 == 0) ? digit : digit * 3;
+            }
+            int soDu = (int)(sum % 10);
+
+            return ((10 - soDu) % 10).ToString();
+        }
+        private string FormatISBN(string isbn13)
+        {
+            return $"{isbn13.Substring(0, 3)}-{isbn13.Substring(3, 3)}-{isbn13.Substring(6, 2)}-{isbn13.Substring(8, 4)}-{isbn13[12]}";
+        }
+
+        public string TaoMaISBNTheoTheLoai(string maTheLoai)
+        {
+            string prefix = "97860458" + maTheLoai;
+
+            int maxSTT = dsSach
+                .Select(s => s.MaSach.Replace("-", ""))
+                .Where(m => m.StartsWith(prefix) && m.Length == 13) // vd:9786045801xxx
+                .Select(m => int.Parse(m.Substring(10, 2))) //vd:978604580109x , 978604580103x
+                .DefaultIfEmpty(0)
+                .Max(); //max= 9 
+
+            int sttMoi = maxSTT + 1;// 10
+            string stt2 = sttMoi.ToString("D2");
+
+            string ma12 = prefix + stt2;
+            string check = TinhCheckDigit(ma12);
+
+            string isbn13 = ma12 + check;
+
+            return FormatISBN(isbn13);
+        }
+        public bool KiemTraISBNHopLe(string maISBNCoHoacKhongDau)
+        {
+            string soISBN13ChuSo = maISBNCoHoacKhongDau.Replace("-", "").Trim();
+
+            if (soISBN13ChuSo.Length != 13 || !long.TryParse(soISBN13ChuSo.Substring(0, 12), out _))
+                return false;
+
+            string ma12ChuSo = soISBN13ChuSo.Substring(0, 12);
+            string checkDigitNhap = soISBN13ChuSo.Substring(12, 1);
+            string checkDigitThucTe = TinhCheckDigit(ma12ChuSo);
+            return checkDigitNhap.Equals(checkDigitThucTe, StringComparison.Ordinal);
+        }
+        public string TaoMaSachTheoTheLoaiTimestamp(string maTL)
+        {
+            string time = DateTime.Now.ToString("yyyyMMdd");
+            return $"{maTL}-{time}";
+        }
+    }
+}
